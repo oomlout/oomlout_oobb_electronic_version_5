@@ -124,7 +124,9 @@ def get_navigation_sort(oobb_style=False):
         sort.append("height")
         sort.append("thickness")
     else:
-        for i in range(1, 10):
+        #taxonomy_10+ carries levels like the spacer pin style, empty
+        #levels are skipped by generate_navigation
+        for i in range(1, 16):
             sort.append(f"taxonomy_{i}")
     return sort
 

@@ -1,0 +1,28 @@
+depth: 4
+height: 3
+oobb_details:
+  depth: 4
+  height: 3
+  oobb_name: spacer
+  spacer_style: ''
+  spacer_type: little
+  width: 3
+part_category: spacer
+part_style: ''
+part_type: little
+taxonomy_1: oobb
+taxonomy_10: ''
+taxonomy_11: ''
+taxonomy_12: ''
+taxonomy_13: ''
+taxonomy_14: ''
+taxonomy_15: ''
+taxonomy_2: part
+taxonomy_3: electronic
+taxonomy_4: spacer
+taxonomy_5: little
+taxonomy_6: plate
+taxonomy_7: 3_width
+taxonomy_8: 3_height
+taxonomy_9: 4_depth
+width: 3

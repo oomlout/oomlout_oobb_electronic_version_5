@@ -1,7 +1,12 @@
 import oomp
 import oomp_helper
 import copy
+import os
 import oomlout_roboclick
+
+# AI image generation (icons/chibis via roboclick) is opt in so the
+# pipeline runs end to end without the roboclick browser session
+RUN_AI = os.environ.get("OOMP_RUN_AI", "") == "1"
 
 def main(**kwargs):
     load_parts(**kwargs)
@@ -81,14 +86,14 @@ def create_generic(**kwargs):
                 part["content_string"] = content_string
 
         #icon
-        if True:
-            count += 1     
+        if RUN_AI:
+            count += 1
             icon_detail = f"make {name_proper} cute"
             oomp_helper.add_icon(part=part, count=count, mode_ai_wait=mode_ai_wait, icon_detail=icon_detail)
 
-        
+
         #image chibi
-        test_image_chibi = True
+        test_image_chibi = RUN_AI
         if test_image_chibi:
             content_string = part.get("content_string", "")    
             count += 1

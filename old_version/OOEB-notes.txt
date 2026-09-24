@@ -1,0 +1,29 @@
+;######  OOEB NOTES  ######
+;##########################
+
+;######  todo
+
+Move the spacers from hl to WI
+
+;###### Modules to add to universal PCB
+
+MO - MOdule 		(connected with three wire polarized cable)
+CO - Component		(a bare component)
+WI - Wiring aprts
+BB - Breadboards
+HL - OLD OOBB name for items (migrating to MO)
+
+;###### MAIN
+
+* LED
+* Button
+* Thermistor
+* Potentiometer
+* Buzzer
+* One Wire Sensor
+
+	;###### Maybe Extra
+
+* 7 segement by 2
+* LCD
+* Display
