@@ -130,79 +130,126 @@ def get_base(thing, **kwargs):
 
 ###### wire connector plates (migrated from old OOEB WI-* parts)
 
-# plate is 4 mm tall, the wire channel pockets are cut 2.8 mm deep from
-# the top face leaving a 1.2 mm floor, the wire pass through cuts and all
-# holes go all the way through
+# Shared plate/spacer dimensions. Standard wire-holder voids come from
+# the OOBB library; the triple-header stack is drawn locally below.
 WIRE_DEPTH_DEFAULT = 4
-WIRE_CUTOUT_DEPTH = 2.8
+WIRE_KEY_RADIUS = 3.0
+WIRE_KEY_OFFSET_X = 1.27
+WIRE_CUT_EXTRA = 2
 
-# connector hardware (mm), sized for 2.54 mm header chunks
-WIRE_KEY_RADIUS = 3.0            # circular key hole for the 2x2 header chunk (spacer plates)
-WIRE_KEY_OFFSET_X = 1.27         # half a pitch off centre so it keys
-WIRE_CUT_EXTRA = 2               # cutout overshoot so cuts go fully through
-WIRE_HEADER_CLEARANCE = 0.54     # clearance for header pieces in their cutouts
+# Triple headers seat in a through-window in a 2.54 mm bottom layer.
+# The upper recess keeps the basic connector's four-pitch keyed exit.
+WIRE_TRIPLE_PITCH = 2.54
+WIRE_TRIPLE_BOTTOM_DEPTH = 2.54
+WIRE_TRIPLE_MULTIPLE_DEFAULT = 3
+WIRE_TRIPLE_FIT_CLEARANCE = 0.4  # per side, versus 0.2 on the single style
+WIRE_TRIPLE_ENTRY_EXTRA = 1.0   # total extra width for the larger wire bundle
+WIRE_TRIPLE_FRONT_CLEARANCE = 6.18
+WIRE_TRIPLE_HOUSING_LENGTH = 14.0
 
-# the pocket is the bar for the holder: it seats the header bar behind
-# the exit opening, one pitch (2.54) + 0.54 clearance long, and two
-# positions (2 x 2.54) wider than the exit centered on it -- which is
-# also three positions wider than the run on the keyed types since their
-# exit is the run + 2.54 (this reproduces the original 15.24 pocket)
-WIRE_POCKET_LENGTH = 2.54 + WIRE_HEADER_CLEARANCE
-WIRE_POCKET_EXTRA_WIDTH = 2 * 2.54
 
-# rim between the pocket and the front edge, taken unscaled from the
-# original 53 mm drawing (edge at 26.5, pocket bottom at 20.32); it also
-# sets the exit slot length and pushes the holder back off the edge
-WIRE_POCKET_FRONT_CLEARANCE = 6.18
+def get_wire_triple_pin_header_holes(thing, **kwargs):
+    """Matching beam and rear wire holes for the bottom layer and top plate."""
+    height = kwargs.get("height", 3)
+    depth = kwargs["depth"]
+    header_cut_depth = kwargs.get("header_cut_depth", WIRE_TRIPLE_BOTTOM_DEPTH)
+    pos = kwargs.get("pos", [0, 0, 0])
+    pitch = WIRE_TRIPLE_PITCH
+    clearance = WIRE_TRIPLE_FIT_CLEARANCE
+    front_y = -(height * oobb.gv("osp") - oobb.gv("osp_minus")) / 2
+    header_front = front_y + WIRE_TRIPLE_FRONT_CLEARANCE
+    entry_top, entry_bottom = 11.43, -2.54
 
-# wire routing channels in absolute mm lifted from the old 53 mm (3 x 3 @
-# 20 mm) drawings; the connectors are the same 2.54 mm hardware whatever
-# the grid so NOTHING is scaled to the 15 mm grid and every position and
-# length is a multiple of 2.54 (or the 1.27 half pitch where a keying
-# offset is needed); widths are n x 2.54, or n x 2.54 + 0.54 clearance
-# where the header piece seats in them
-# each channel: (center_x, entry_width, entry_top, step_y, run_width)
-#   entry - narrower tab the wire drops into at the back (the back wire
-#           clearance box; shorten y_top towards y_step if a type ever
-#           needs the room)
-#   run   - main vertical run from step_y down to the pocket, widens at
-#           step_y
-# the front piece is derived: the exit slot is the run width (motor types)
-# or run + 2.54 shifted half a pitch left (wire types), the pocket is the
-# exit + 2 x 2.54 centered on it, and both sit WIRE_POCKET_FRONT_CLEARANCE
-# back from the front edge so the run bottom follows the pocket position
-# keyed wire types get a half cylinder notch in the front edge to show
-# the keying side
-WIRE_EXIT_NOTCH_TYPES = ["basic", "i2c", "power"]
-WIRE_EXIT_NOTCH_RADIUS = 1.5
-WIRE_EXIT_NOTCH_GAP = 3
+    # A three-pin-wide, one-pitch-long beam hole, with fit allowance.
+    oobb.append_full(
+        thing, type="negative", shape="cube",
+        size=[3 * pitch + 2 * clearance, pitch + 2 * clearance, header_cut_depth + 1],
+        pos=[pos[0] + pitch / 2 - (3 * pitch + 2 * clearance) / 2,
+             pos[1] + header_front - clearance, pos[2] - 1],
+    )
+    # Same enlarged wire entry on both pieces, open through their full depth.
+    entry_width = 5.62 + WIRE_TRIPLE_ENTRY_EXTRA
+    oobb.append_full(
+        thing, type="negative", shape="cube",
+        size=[entry_width, entry_top - entry_bottom, depth + WIRE_CUT_EXTRA],
+        pos=[pos[0] + pitch / 2 - entry_width / 2,
+             pos[1] + entry_bottom, pos[2] - 1],
+    )
 
-WIRE_CHANNELS = {
-    "basic": [
-        (1.27, 5.62, 10.16, -3.81, 7.62),
-    ],
-    "power": [
-        (0.00, 3.08, 2.54, -3.81, 5.08),
-    ],
-    "motor": [
-        (0.00, 3.08, 10.16, 3.81, 5.08),
-    ],
-    "motor_stepper": [
-        (0.00, 8.16, 10.16, 3.81, 10.16),
-    ],
-    "i2c": [
-        (1.27, 8.16, 10.16, 3.81, 10.16),
-    ],
-}
+
+def get_wire_triple_pin_header_top_void(thing, **kwargs):
+    """Retain the beams with a closed front and a hole matching the base seat."""
+    params = copy.deepcopy(kwargs)
+    params["header_cut_depth"] = params["depth"] + 1
+    get_wire_triple_pin_header_holes(thing, **params)
+
+
+def get_wire_triple_pin_header_void(thing, **kwargs):
+    """Cut one three-pin seat, its keyed front, and the rear wire clearance."""
+    height = kwargs.get("height", 3)
+    multiple = kwargs.get("multiple", WIRE_TRIPLE_MULTIPLE_DEFAULT)
+    required_depth = round(WIRE_TRIPLE_BOTTOM_DEPTH + multiple * WIRE_TRIPLE_PITCH, 2)
+    depth = kwargs.get("depth", required_depth)
+    pos = kwargs.get("pos", [0, 0, 0])
+    if depth < required_depth - 1e-9:
+        raise ValueError(f"triple_pin_header with {multiple} rows needs at least {required_depth} mm total depth")
+
+    pitch = WIRE_TRIPLE_PITCH
+    clearance = WIRE_TRIPLE_FIT_CLEARANCE
+    front_y = -(height * oobb.gv("osp") - oobb.gv("osp_minus")) / 2
+    header_front = front_y + WIRE_TRIPLE_FRONT_CLEARANCE
+    header_back = header_front + pitch
+    run_top = header_back + WIRE_TRIPLE_HOUSING_LENGTH
+    entry_top = 11.43
+    if run_top >= entry_top:
+        raise ValueError("triple_pin_header needs a taller plate for the rear wire entry")
+
+    def rect(x, y, size_x, size_y, z, size_z):
+        oobb.append_full(
+            thing, type="negative", shape="cube",
+            size=[size_x, size_y, size_z],
+            pos=[pos[0] + x - size_x / 2, pos[1] + y - size_y / 2, pos[2] + z],
+        )
+
+    get_wire_triple_pin_header_holes(thing, height=height, depth=depth, pos=pos)
+
+    # Leave 2.54 mm below the housing and front recess. Their overlap with
+    # the seat and rear entry makes a continuous path for the connector.
+    recess_depth = depth - WIRE_TRIPLE_BOTTOM_DEPTH + 1
+    rect(pitch / 2, (header_front + run_top) / 2,
+         3 * pitch + 2 * clearance, run_top - header_front + 2 * clearance,
+         WIRE_TRIPLE_BOTTOM_DEPTH, recess_depth)
+    rect(0, (front_y - 1 + header_front) / 2,
+         4 * pitch, header_front - front_y + 1,
+         WIRE_TRIPLE_BOTTOM_DEPTH, recess_depth)
+
+    if kwargs.get("polarizing_pin", True):
+        oobb.append_full(
+            thing, type="negative", shape="cylinder", r=1.5, h=recess_depth,
+            pos=[pos[0] - 2 * pitch - 3 - 1.5,
+                 pos[1] + front_y, pos[2] + WIRE_TRIPLE_BOTTOM_DEPTH],
+        )
 
 
 def get_wire(thing, **kwargs):
     prepare_print = kwargs.get("prepare_print", False)
+    triple_pin_header = kwargs.get("wire_style", "") == "triple_pin_header"
+    triple_pin_header_top = kwargs.get("wire_style", "") == "triple_pin_header_top"
+    multiple = kwargs.get("multiple", WIRE_TRIPLE_MULTIPLE_DEFAULT) if triple_pin_header else 1
+    if triple_pin_header:
+        if type(multiple) is not int or not 2 <= multiple <= 10:
+            raise ValueError("triple_pin_header multiple must be an integer from 2 to 10")
+    if (triple_pin_header or triple_pin_header_top) and kwargs.get("wire_type", "basic") != "basic":
+        raise ValueError("triple_pin_header and its top retainer are basic wire styles")
     width = kwargs.get("width", 3)
     height = kwargs.get("height", 3)
-    depth = kwargs.get("depth", WIRE_DEPTH_DEFAULT)
-    wire_type = kwargs.get("wire_type", "basic")
+    default_depth = round(WIRE_TRIPLE_BOTTOM_DEPTH + multiple * WIRE_TRIPLE_PITCH, 2) if triple_pin_header else WIRE_DEPTH_DEFAULT
+    if triple_pin_header_top:
+        default_depth = WIRE_TRIPLE_BOTTOM_DEPTH
+    depth = kwargs.get("depth", default_depth)
     pos = kwargs.get("pos", [0, 0, 0])
+    if (triple_pin_header or triple_pin_header_top) and width < 3:
+        raise ValueError("triple_pin_header plate width must be at least 3")
 
     sp = oobb.gv("osp")
     grid_x = (width - 1) / 2 * sp      # connector column/row offsets
@@ -213,27 +260,6 @@ def get_wire(thing, **kwargs):
         p3["type"] = "negative"
         p3["pos"] = [p3["pos"][0] + pos[0], p3["pos"][1] + pos[1], p3["pos"][2] + pos[2]]
         oobb.append_full(thing, **p3)
-
-    def add_pocket(**p3):
-        # 2.8 mm deep pocket cut down from the top face
-        p3["type"] = "negative"
-        p3["pos"] = [p3["pos"][0] + pos[0], p3["pos"][1] + pos[1], depth - WIRE_CUTOUT_DEPTH + pos[2]]
-        oobb.append_full(thing, **p3)
-
-    def pocket_rect(x, y, size_x, size_y):
-        # cube is corner anchored in opsc so shift by half size
-        add_pocket(
-            shape="cube",
-            size=[size_x, size_y, WIRE_CUTOUT_DEPTH + 1],
-            pos=[x - size_x / 2, y - size_y / 2, 0],
-        )
-
-    def through_rect(x, y, size_x, size_y):
-        add_through(
-            shape="cube",
-            size=[size_x, size_y, depth + WIRE_CUT_EXTRA],
-            pos=[x - size_x / 2, y - size_y / 2, -1],
-        )
 
     #plate
     if True:
@@ -278,54 +304,93 @@ def get_wire(thing, **kwargs):
                 pos=[px, py, depth / 2],
             )
 
-    #no key hole at the back any more: the full size channel needs the
-    #space, the keying is the offset front exit (and the edge notch on
-    #the wire types) so the plug only fits one way round
+    if triple_pin_header_top:
+        p3 = copy.deepcopy(kwargs)
+        p3.update(height=height, depth=depth, pos=copy.deepcopy(pos))
+        get_wire_triple_pin_header_top_void(thing, **p3)
+    elif triple_pin_header:
+        p3 = copy.deepcopy(kwargs)
+        p3.update(height=height, depth=depth, multiple=multiple, pos=copy.deepcopy(pos))
+        get_wire_triple_pin_header_void(thing, **p3)
 
-    #wire routing channel, 2.8 mm deep, exiting through the front edge
-    if True:
-        for channel in WIRE_CHANNELS.get(wire_type, []):
-            (cx, w_entry, y_top, y_step, w_run) = channel
+        # Each version prints its matching top beside the base, with a 6 mm gap.
+        # The internal top style shares the mounting pattern and beam holes.
+        top_kwargs = copy.deepcopy(kwargs)
+        top_kwargs.pop("multiple", None)
+        top_kwargs.update(
+            wire_style="triple_pin_header_top", width=width, height=height,
+            depth=WIRE_TRIPLE_BOTTOM_DEPTH, prepare_print=False,
+            pos=[pos[0] + width * sp - oobb.gv("osp_minus") + 6, pos[1], pos[2]],
+        )
+        get_wire(thing, **top_kwargs)
+    else:
+        # Reusable single-header void; triple-header geometry stays local.
+        p3 = copy.deepcopy(kwargs)
+        p3.update(
+            shape="oobb_wire",
+            type="negative",
+            plate=False,
+            wire_type=kwargs.get("wire_type", "basic"),
+            polarizing_pin=kwargs.get("polarizing_pin", True),
+            width=width,
+            height=height,
+            depth=depth,
+            pos=copy.deepcopy(pos),
+        )
+        oobb.append_full(thing, **p3)
 
-            #the holder sits WIRE_POCKET_FRONT_CLEARANCE back from the
-            #front edge (as in the original, unscaled) and the run ends
-            #at the top of the pocket, which is one pitch + clearance long
-            plate_front_y = -(height * sp - oobb.gv("osp_minus")) / 2
-            y_bottom = plate_front_y + WIRE_POCKET_FRONT_CLEARANCE
-            y_run_bottom = y_bottom + WIRE_POCKET_LENGTH
+    if prepare_print:
+        scad_help.prepare_base_for_print(thing, pos, **kwargs)
 
-            #entry tab and run go all the way through (the wires pass
-            #through them), entry above the step, full width run below it
-            through_rect(cx, (y_top + y_step) / 2, w_entry, y_top - y_step)
-            through_rect(cx, (y_step + y_run_bottom) / 2, w_run, y_step - y_run_bottom)
 
-            #front opening: motor and motor_stepper match the inside
-            #channel exactly, the wire types keep the right side flush
-            #with the run and open 2.54 mm wider on the left so the
-            #plug only fits one way round
-            if wire_type in ("motor", "motor_stepper"):
-                exit_cx = cx
-                w_exit = w_run
-            else:
-                exit_cx = cx - 1.27
-                w_exit = w_run + 2.54
-            #pocket is the bar for the holder: exit + 2 x 2.54 wide
-            #centered on the exit opening, and the exit slot runs out
-            #through the front plate edge from it
-            w_pocket = w_exit + WIRE_POCKET_EXTRA_WIDTH
-            pocket_rect(exit_cx, (y_run_bottom + y_bottom) / 2, w_pocket, y_run_bottom - y_bottom)
-            pocket_rect(exit_cx, y_bottom - 10, w_exit, 20)
+def get_wire_barrel_jack(thing, **kwargs):
+    prepare_print = kwargs.get("prepare_print", False)
+    width = kwargs.get("width", 3)
+    height = kwargs.get("height", 3)
+    overall_depth = kwargs.get("depth", 12)
+    slice_depth = overall_depth / 2
+    pos = kwargs.get("pos", [0, 0, 0])
+    wire_style = kwargs.get("wire_style", "")
+    slice_offsets_x = [-25, 25]
+    plate_front_y = (height * oobb.gv("osp") - oobb.gv("osp_minus")) / 2
+    spacer_front_y = SPACER_CUTOUT_LITTLE[1] / 2
+    cylinder_depth = plate_front_y - spacer_front_y + 0.5
 
-            #half cylinder notch in the front edge marking the keying
-            #side, a gap of 3 mm left of the exit
-            if wire_type in WIRE_EXIT_NOTCH_TYPES:
-                notch_x = exit_cx - w_exit / 2 - WIRE_EXIT_NOTCH_GAP - WIRE_EXIT_NOTCH_RADIUS
-                add_pocket(
-                    shape="cylinder",
-                    r=WIRE_EXIT_NOTCH_RADIUS,
-                    h=WIRE_CUTOUT_DEPTH + 1,
-                    pos=[notch_x, plate_front_y, 0],
-                )
+    # The slices print side by side; stack the second one on the first for the full depth.
+    for slice_number, slice_offset_x in enumerate(slice_offsets_x):
+        spacer_floor = 0
+        if wire_style == "bottom_solid" and slice_number == 0:
+            spacer_floor = 1.5
+
+        slice_kwargs = {
+            "width": width,
+            "height": height,
+            "depth": slice_depth,
+            "spacer_type": "little",
+            "spacer_floor": spacer_floor,
+            "pos": [
+                pos[0] + slice_offset_x,
+                pos[1],
+                pos[2],
+            ],
+        }
+        get_spacer(thing, **slice_kwargs)
+
+        # Both cuts share the assembled split-plane axis. The lower slice
+        # keeps the cylinder's lower half; the upper slice keeps its upper half.
+        kwargs_entry = {
+            "shape": "cylinder",
+            "type": "negative",
+            "r": 7 / 2,
+            "h": cylinder_depth,
+            "rot": [-90, 0, 0],
+            "pos": [
+                pos[0] + slice_offset_x,
+                pos[1] - plate_front_y,
+                pos[2] + (slice_depth if slice_number == 0 else 0),
+            ],
+        }
+        oobb.append_full(thing, **kwargs_entry)
 
     if prepare_print:
         scad_help.prepare_base_for_print(thing, pos, **kwargs)
@@ -367,6 +432,7 @@ def get_spacer(thing, **kwargs):
     depth = kwargs.get("depth", WIRE_DEPTH_DEFAULT)
     spacer_type = kwargs.get("spacer_type", "big")
     spacer_style = kwargs.get("spacer_style", "")
+    spacer_floor = kwargs.get("spacer_floor", 0)
     pos = kwargs.get("pos", [0, 0, 0])
 
     #style arrives as "countersunk_style" / "nut_style" / ""
@@ -461,11 +527,16 @@ def get_spacer(thing, **kwargs):
     elif spacer_type == "little":
         cutout = SPACER_CUTOUT_LITTLE
     if spacer_type in ("big", "little"):
+        cutout_start = -1
+        cutout_depth = depth + WIRE_CUT_EXTRA
+        if spacer_floor:
+            cutout_start = spacer_floor
+            cutout_depth = depth - spacer_floor + WIRE_CUT_EXTRA
         add_through(
             shape="rounded_rectangle",
-            size=[cutout[0], cutout[1], depth + WIRE_CUT_EXTRA],
+            size=[cutout[0], cutout[1], cutout_depth],
             r=SPACER_CUTOUT_RADIUS,
-            pos=[0, 0, -1],
+            pos=[0, 0, cutout_start],
         )
     elif spacer_type == "hole":
         add_through(

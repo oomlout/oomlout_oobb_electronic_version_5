@@ -23,6 +23,8 @@ from oomp_populate_helper import build_oomp_id, write_extras
 #
 # taxonomy: oobb, part, electronic, wire, <type>, plate, <width>_width,
 #           <height>_height, <depth>_depth
+# barrel-jack plates use <jack>, plate, then the same three dimensions.
+# A barrel-jack plate style follows the dimensions when one is set.
 # spacers add the pin style after depth when set:
 #           oobb, part, electronic, spacer, <type>, plate, <width>_width,
 #           <height>_height, <depth>_depth, <style>
@@ -30,6 +32,8 @@ from oomp_populate_helper import build_oomp_id, write_extras
 WIRE_WIDTH_DEFAULT = 3
 WIRE_HEIGHT_DEFAULT = 3
 WIRE_DEPTH_DEFAULT = 4
+WIRE_HEADER_PITCH = 2.54
+WIRE_TRIPLE_PIN_HEADER_MULTIPLES = [3, 2, *range(4, 11)]
 
 WIRE_CONNECTOR_TYPES = [
     "basic",
@@ -51,30 +55,45 @@ SPACER_STYLES = ["", "countersunk_style", "nut_style"]
 def apply_taxonomy(option):
     part_type = option["part_type"]
     part_style = option.get("part_style", "")
+    taxonomy_6 = option.get("taxonomy_6", "plate")
+    taxonomy_7 = option.get("taxonomy_7", "")
+    oobb_name = option.pop("oobb_name", option["part_category"])
     width = option["width"]
     height = option["height"]
     depth = option["depth"]
+
+    if taxonomy_6 == "plate":
+        width_taxonomy_slot = 7
+    else:
+        taxonomy_7 = taxonomy_7 or "plate"
+        width_taxonomy_slot = 8
 
     option["taxonomy_1"] = "oobb"
     option["taxonomy_2"] = "part"
     option["taxonomy_3"] = "electronic"
     option["taxonomy_4"] = option["part_category"]
     option["taxonomy_5"] = part_type
-    option["taxonomy_6"] = "plate"
-    option["taxonomy_7"] = f"{width}_width"
-    option["taxonomy_8"] = f"{height}_height"
-    option["taxonomy_9"] = f"{depth}_depth"
+    option["taxonomy_6"] = taxonomy_6
+    if taxonomy_7:
+        option["taxonomy_7"] = taxonomy_7
+    option[f"taxonomy_{width_taxonomy_slot}"] = f"{width}_width"
+    option[f"taxonomy_{width_taxonomy_slot + 1}"] = f"{height}_height"
+    option[f"taxonomy_{width_taxonomy_slot + 2}"] = f"{depth}_depth".replace(".", "_")
     if part_style:
-        option["taxonomy_10"] = part_style
+        option[f"taxonomy_{width_taxonomy_slot + 3}"] = part_style
+    if "multiple" in option:
+        option[f"taxonomy_{width_taxonomy_slot + 4}"] = f"{option['multiple']}_multiple"
 
     option["oobb_details"] = {
-        "oobb_name": option["part_category"],
+        "oobb_name": oobb_name,
         f"{option['part_category']}_type": part_type,
         f"{option['part_category']}_style": part_style,
         "width": width,
         "height": height,
         "depth": depth,
     }
+    if "multiple" in option:
+        option["oobb_details"]["multiple"] = option["multiple"]
 
 
 def main(**kwargs):
@@ -90,6 +109,49 @@ def main(**kwargs):
                 "depth": WIRE_DEPTH_DEFAULT,
             }
         )
+
+    # Make the three-row stack first; multiple counts rows vertically.
+    # The bottom layer adds one pitch below the 2-10 header rows.
+    for multiple in WIRE_TRIPLE_PIN_HEADER_MULTIPLES:
+        options.append(
+            {
+                "part_category": "wire",
+                "part_type": "basic",
+                "part_style": "triple_pin_header",
+                "multiple": multiple,
+                "width": WIRE_WIDTH_DEFAULT,
+                "height": WIRE_HEIGHT_DEFAULT,
+                "depth": round(WIRE_HEADER_PITCH * (multiple + 1), 2),
+            }
+        )
+
+    options.append(
+        {
+            "part_category": "wire",
+            "part_type": "power",
+            "part_style": "",
+            "taxonomy_6": "barrel_jack_2_1_mm",
+            "taxonomy_7": "plate",
+            "oobb_name": "wire_barrel_jack",
+            "width": 3,
+            "height": 3,
+            "depth": 12,
+        }
+    )
+
+    options.append(
+        {
+            "part_category": "wire",
+            "part_type": "power",
+            "part_style": "bottom_solid",
+            "taxonomy_6": "barrel_jack_2_1_mm",
+            "taxonomy_7": "plate",
+            "oobb_name": "wire_barrel_jack",
+            "width": 3,
+            "height": 3,
+            "depth": 12,
+        }
+    )
 
     for spacer_type in SPACER_TYPES:
         for spacer_style in SPACER_STYLES:

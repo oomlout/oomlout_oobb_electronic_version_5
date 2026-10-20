@@ -643,46 +643,59 @@ thing:
       r: 1.5
       shape: cylinder
       type: negative
-  - - pos:
-      - -1.54
-      - 3.8100000000000005
-      - -1
-      shape: cube
-      size:
-      - 3.08
-      - 6.35
-      - 6
-      type: negative
-  - - pos:
-      - -2.54
-      - -12.74
-      - -1
-      shape: cube
-      size:
-      - 5.08
-      - 16.55
-      - 6
-      type: negative
-  - - pos:
-      - -5.08
-      - -15.82
-      - 1.2000000000000002
-      shape: cube
-      size:
-      - 10.16
-      - 3.08
-      - 3.8
-      type: negative
-  - - pos:
-      - -2.54
-      - -35.82
-      - 1.2000000000000002
-      shape: cube
-      size:
-      - 5.08
-      - 20
-      - 3.8
-      type: negative
+  - - inclusion: all
+      m: ''
+      objects:
+      - pos:
+        - -1.54
+        - 3.8100000000000005
+        - -1
+        shape: cube
+        size:
+        - 3.08
+        - 6.35
+        - 6
+        type: positive
+      - pos:
+        - -2.74
+        - -12.94
+        - 1.2000000000000002
+        shape: cube
+        size:
+        - 5.48
+        - 16.95
+        - 3.8
+        type: positive
+      - pos:
+        - -5.28
+        - -16.02
+        - 1.2000000000000002
+        shape: cube
+        size:
+        - 10.56
+        - 3.48
+        - 3.8
+        type: positive
+      - pos:
+        - -2.54
+        - -35.82
+        - 1.2000000000000002
+        shape: cube
+        size:
+        - 5.08
+        - 20
+        - 3.8
+        type: positive
+      pos:
+      - 0
+      - 0
+      - 0
+      rot:
+      - 0
+      - 0
+      - 0
+      type: rotation
+      typetype: negative
   components_objects:
   - depth: 4
     filter: ''
@@ -691,6 +704,8 @@ thing:
     - 3dpr
     navigation: true
     oobb_name: wire
+    oomp_description_extra: 4_depth
+    oomp_description_main: wire_3_width_3_height
     oomp_mode: project
     oomp_run: true
     overwrite: true
@@ -698,7 +713,6 @@ thing:
     - 0
     - 0
     - 0
-    save_type: all
     shape: oobb_plate
     typ: all
     type: positive
@@ -789,48 +803,32 @@ thing:
     radius_name: m3
     shape: oobb_hole
     type: negative
-  - pos:
-    - -1.54
-    - 3.8100000000000005
-    - -1
-    shape: cube
-    size:
-    - 3.08
-    - 6.35
-    - 6
+  - depth: 4
+    filter: ''
+    height: 3
+    modes:
+    - 3dpr
+    navigation: true
+    oobb_name: wire
+    oomp_description_extra: 4_depth
+    oomp_description_main: wire_3_width_3_height
+    oomp_mode: project
+    oomp_run: true
+    overwrite: true
+    plate: false
+    polarizing_pin: true
+    pos:
+    - 0
+    - 0
+    - 0
+    shape: oobb_wire
+    typ: all
     type: negative
-  - pos:
-    - -2.54
-    - -12.74
-    - -1
-    shape: cube
-    size:
-    - 5.08
-    - 16.55
-    - 6
-    type: negative
-  - pos:
-    - -5.08
-    - -15.82
-    - 1.2000000000000002
-    shape: cube
-    size:
-    - 10.16
-    - 3.08
-    - 3.8
-    type: negative
-  - pos:
-    - -2.54
-    - -35.82
-    - 1.2000000000000002
-    shape: cube
-    size:
-    - 5.08
-    - 20
-    - 3.8
-    type: negative
+    width: 3
+    wire_style: ''
+    wire_type: motor
   components_string:
-  - oobb_plate_shape_positive_type_4_depth_all_typ_all_save_type_true_navigation_true_overwrite_'3dpr'_modes_project_oomp_mode_true_oomp_run_3_height_wire_oobb_name_3_width_motor_wire_type
+  - oobb_plate_shape_positive_type_4_depth_3_height_'3dpr'_modes_true_navigation_wire_oobb_name_4_depth_oomp_description_extra_wire_3_width_3_height_oomp_description_main_project_oomp_mode_true_oomp_run_true_overwrite_all_typ_3_width_motor_wire_type
   - oobb_hole_shape_negative_type_m6_radius_name_-15.0_-15.0_2.0_pos
   - oobb_hole_shape_negative_type_m6_radius_name_15.0_-15.0_2.0_pos
   - oobb_hole_shape_negative_type_m6_radius_name_-15.0_15.0_2.0_pos
@@ -843,10 +841,7 @@ thing:
   - oobb_hole_shape_negative_type_m3_radius_name_15.0_-7.5_2.0_pos
   - oobb_hole_shape_negative_type_m3_radius_name_-15.0_7.5_2.0_pos
   - oobb_hole_shape_negative_type_m3_radius_name_15.0_7.5_2.0_pos
-  - cube_shape_negative_type_-1.54_3.8100000000000005_-1_pos_3.08_6.35_6_size
-  - cube_shape_negative_type_-2.54_-12.74_-1_pos_5.08_16.55_6_size
-  - cube_shape_negative_type_-5.08_-15.82_1.2000000000000002_pos_10.16_3.08_3.8_size
-  - cube_shape_negative_type_-2.54_-35.82_1.2000000000000002_pos_5.08_20_3.8_size
+  - oobb_wire_shape_negative_type_4_depth_3_height_'3dpr'_modes_true_navigation_wire_oobb_name_4_depth_oomp_description_extra_wire_3_width_3_height_oomp_description_main_project_oomp_mode_true_oomp_run_true_overwrite_all_typ_3_width_motor_wire_type_false_plate_true_polarizing_pin
   depth: 4
   description: default wire 3x3x0
   description_extra: 4_depth

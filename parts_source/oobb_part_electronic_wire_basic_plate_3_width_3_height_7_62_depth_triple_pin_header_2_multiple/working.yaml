@@ -1,0 +1,30 @@
+depth: 7.62
+height: 3
+multiple: 2
+oobb_details:
+  depth: 7.62
+  height: 3
+  multiple: 2
+  oobb_name: wire
+  width: 3
+  wire_style: triple_pin_header
+  wire_type: basic
+part_category: wire
+part_style: triple_pin_header
+part_type: basic
+taxonomy_1: oobb
+taxonomy_10: triple_pin_header
+taxonomy_11: 2_multiple
+taxonomy_12: ''
+taxonomy_13: ''
+taxonomy_14: ''
+taxonomy_15: ''
+taxonomy_2: part
+taxonomy_3: electronic
+taxonomy_4: wire
+taxonomy_5: basic
+taxonomy_6: plate
+taxonomy_7: 3_width
+taxonomy_8: 3_height
+taxonomy_9: 7_62_depth
+width: 3

@@ -1,0 +1,1672 @@
+bip_39_2_word_array:
+- runway
+- merry
+bip_39_2_word_no_space: runwaymerry
+bip_39_2_word_space: runway merry
+bip_39_2_word_underscore: runway_merry
+bip_39_3_word_array:
+- runway
+- merry
+- great
+bip_39_3_word_no_space: runwaymerrygreat
+bip_39_3_word_space: runway merry great
+bip_39_3_word_underscore: runway_merry_great
+bip_39_full_array:
+- runway
+- merry
+- great
+- pluck
+- robot
+- fade
+- office
+- taxi
+- kid
+- soda
+- arrow
+- feature
+bip_39_full_no_space: runwaymerrygreatpluckrobotfadeofficetaxikidsodaarrowfeature
+bip_39_full_space: runway merry great pluck robot fade office taxi kid soda arrow
+  feature
+bip_39_full_underscore: runway_merry_great_pluck_robot_fade_office_taxi_kid_soda_arrow_feature
+depth: 12
+directory: parts/oobb_part_electronic_wire_power_barrel_jack_2_1_mm_plate_3_width_3_height_12_depth_bottom_solid
+height: 3
+id: oobb_part_electronic_wire_power_barrel_jack_2_1_mm_plate_3_width_3_height_12_depth_bottom_solid
+id_no_class: oobb_part_electronic_wire_power_barrel_jack_2_1_mm_plate_3_width_3_height_12_depth
+id_no_size: oobb_part_electronic_wire_power_barrel_jack_2_1_mm_plate_3_width_3_height_12_depth
+id_no_type: oobb_part_electronic_wire_power_barrel_jack_2_1_mm_plate_3_width_3_height_12_depth
+id_oobb: oobb_part_electronic_wire_power_barrel_jack_2_1_mm_plate_3_width_3_height_12_depth_bottom_solid
+kwargs:
+  depth: 12
+  filter: ''
+  height: 3
+  modes:
+  - 3dpr
+  navigation: true
+  oobb_name: wire_barrel_jack
+  oomp_description_extra: 12_depth
+  oomp_description_main: wire_barrel_jack_3_width_3_height
+  oomp_mode: project
+  oomp_run: true
+  overwrite: true
+  taxonomy_1: oobb
+  taxonomy_10: 12_depth
+  taxonomy_11: bottom_solid
+  taxonomy_12: ''
+  taxonomy_13: ''
+  taxonomy_14: ''
+  taxonomy_15: ''
+  taxonomy_2: part
+  taxonomy_3: electronic
+  taxonomy_4: wire
+  taxonomy_5: power
+  taxonomy_6: barrel_jack_2_1_mm
+  taxonomy_7: plate
+  taxonomy_8: 3_width
+  taxonomy_9: 3_height
+  typ: all
+  type: C:\gh\oomlout_oobb_electronic_version_5_wire_barrel_jack
+  width: 3
+  wire_style: bottom_solid
+  wire_type: power
+link_github: https://github.com/oomlout/oomlout_oomp_version_1_messy/tree/main/parts/oobb_part_electronic_wire_power_barrel_jack_2_1_mm_plate_3_width_3_height_12_depth
+link_main: https://github.com/oomlout/oomlout_oomp_version_1_messy/tree/main/parts/oobb_part_electronic_wire_power_barrel_jack_2_1_mm_plate_3_width_3_height_12_depth
+link_redirect: https://github.com/oomlout/oomlout_oomp_version_1_messy/tree/main/parts/oobb_part_electronic_wire_power_barrel_jack_2_1_mm_plate_3_width_3_height_12_depth
+md5: bd717598d35bb2a3a666f37a59c432aa
+md5_10: bd717598d3
+md5_10_upper: BD717598D3
+md5_5: bd717
+md5_5_upper: BD717
+md5_6: bd7175
+md5_6_alpha: 7e3qt
+md5_6_alpha_upper: 7E3QT
+md5_6_upper: BD7175
+name: oobb_part_electronic_wire_power_barrel_jack_2_1_mm_plate_3_width_3_height_12_depth_bottom_solid
+name_no_class: Oobb Part Electronic Wire Power Barrel Jack 2 1 Mm Plate 3 Width 3
+  Height 9 Depth Bottom Solid
+name_no_size: Oobb Part Electronic Wire Power Barrel Jack 2 1 Mm Plate 3 Width 3 Height
+  9 Depth Bottom Solid
+name_no_type: Oobb Part Electronic Wire Power Barrel Jack 2 1 Mm Plate 3 Width 3 Height
+  9 Depth Bottom Solid
+name_proper: Oobb Part Electronic Wire Power Barrel Jack 2 1 Mm Plate 3 Width 3 Height
+  9 Depth Bottom Solid
+name_space: oobb part electronic wire power barrel jack 2 1 mm plate 3 width 3 height
+  9 depth bottom solid
+name_upper: OOBB PART ELECTRONIC WIRE POWER BARREL JACK 2 1 MM PLATE 3 WIDTH 3 HEIGHT
+  9 DEPTH BOTTOM SOLID
+oobb_details:
+  depth: 12
+  height: 3
+  oobb_name: wire_barrel_jack
+  width: 3
+  wire_style: bottom_solid
+  wire_type: power
+oobb_name: wire_barrel_jack
+oomlout_ai_roboclick_1:
+  actions:
+  - command: text_jinja_template
+    convert_to_pdf: false
+    convert_to_png: false
+    dict_data:
+      depth: 9
+      directory: parts\oobb_part_electronic_wire_power_barrel_jack_2_1_mm_plate_3_width_3_height_12_depth
+      height: 3
+      name: oobb_part_electronic_wire_power_barrel_jack_2_1_mm_plate_3_width_3_height_12_depth
+      name_proper: Oobb Part Electronic Wire Power Barrel Jack 2 1 Mm Plate 3 Width
+        3 Height 9 Depth
+      name_space: oobb part electronic wire power barrel jack 2 1 mm plate 3 width
+        3 height 9 depth
+      name_upper: OOBB PART ELECTRONIC WIRE POWER BARREL JACK 2 1 MM PLATE 3 WIDTH
+        3 HEIGHT 9 DEPTH
+      oobb_details:
+        depth: 9
+        height: 3
+        oobb_name: wire_barrel_jack
+        width: 3
+        wire_style: ''
+        wire_type: power
+      part_category: wire
+      part_style: ''
+      part_type: power
+      taxonomy_1: oobb
+      taxonomy_10: 12_depth
+      taxonomy_11: ''
+      taxonomy_12: ''
+      taxonomy_13: ''
+      taxonomy_14: ''
+      taxonomy_15: ''
+      taxonomy_2: part
+      taxonomy_3: electronic
+      taxonomy_4: wire
+      taxonomy_5: power
+      taxonomy_6: barrel_jack_2_1_mm
+      taxonomy_7: plate
+      taxonomy_8: 3_width
+      taxonomy_9: 3_height
+      url_chat: ''
+      width: 3
+    dict_data_files: {}
+    dict_data_files_exists: {}
+    file_output: label_oomp.svg
+    file_template: C:\gh\oomlout_oobb_electronic_version_5\source_file\template_jinja\template_jinja_label_oomlout_76_2_mm_50_8_mm\working.svg.j2
+    search_and_replace: []
+  file_test: label_oomp.pdf
+  retries_until_complete: 0
+oomp_key: oomp_oobb_part_electronic_wire_power_barrel_jack_2_1_mm_plate_3_width_3_height_12_depth_bottom_solid
+part_category: wire
+part_style: bottom_solid
+part_type: power
+project_name: C:\gh\oomlout_oobb_electronic_version_5
+taxonomy_1: oobb
+taxonomy_10: 12_depth
+taxonomy_10_capital: 9 Depth
+taxonomy_10_first_letter: '9'
+taxonomy_10_first_letter_upper: '9'
+taxonomy_10_length_1: '9'
+taxonomy_10_length_2: '9_'
+taxonomy_10_length_3: 9_d
+taxonomy_10_length_4: 9_de
+taxonomy_10_length_5: 9_dep
+taxonomy_10_upper: 9_DEPTH
+taxonomy_10_upper_length_1: '9'
+taxonomy_10_upper_length_2: '9_'
+taxonomy_10_upper_length_3: 9_D
+taxonomy_10_upper_length_4: 9_DE
+taxonomy_10_upper_length_5: 9_DEP
+taxonomy_11: bottom_solid
+taxonomy_12: ''
+taxonomy_13: ''
+taxonomy_14: ''
+taxonomy_15: ''
+taxonomy_1_capital: Oobb
+taxonomy_1_first_letter: o
+taxonomy_1_first_letter_upper: O
+taxonomy_1_length_1: o
+taxonomy_1_length_2: oo
+taxonomy_1_length_3: oob
+taxonomy_1_length_4: oobb
+taxonomy_1_length_5: oobb
+taxonomy_1_upper: OOBB
+taxonomy_1_upper_length_1: O
+taxonomy_1_upper_length_2: OO
+taxonomy_1_upper_length_3: OOB
+taxonomy_1_upper_length_4: OOBB
+taxonomy_1_upper_length_5: OOBB
+taxonomy_2: part
+taxonomy_2_capital: Part
+taxonomy_2_first_letter: p
+taxonomy_2_first_letter_upper: P
+taxonomy_2_length_1: p
+taxonomy_2_length_2: pa
+taxonomy_2_length_3: par
+taxonomy_2_length_4: part
+taxonomy_2_length_5: part
+taxonomy_2_upper: PART
+taxonomy_2_upper_length_1: P
+taxonomy_2_upper_length_2: PA
+taxonomy_2_upper_length_3: PAR
+taxonomy_2_upper_length_4: PART
+taxonomy_2_upper_length_5: PART
+taxonomy_3: electronic
+taxonomy_3_capital: Electronic
+taxonomy_3_first_letter: e
+taxonomy_3_first_letter_upper: E
+taxonomy_3_length_1: e
+taxonomy_3_length_2: el
+taxonomy_3_length_3: ele
+taxonomy_3_length_4: elec
+taxonomy_3_length_5: elect
+taxonomy_3_upper: ELECTRONIC
+taxonomy_3_upper_length_1: E
+taxonomy_3_upper_length_2: EL
+taxonomy_3_upper_length_3: ELE
+taxonomy_3_upper_length_4: ELEC
+taxonomy_3_upper_length_5: ELECT
+taxonomy_4: wire
+taxonomy_4_capital: Wire
+taxonomy_4_first_letter: w
+taxonomy_4_first_letter_upper: W
+taxonomy_4_length_1: w
+taxonomy_4_length_2: wi
+taxonomy_4_length_3: wir
+taxonomy_4_length_4: wire
+taxonomy_4_length_5: wire
+taxonomy_4_upper: WIRE
+taxonomy_4_upper_length_1: W
+taxonomy_4_upper_length_2: WI
+taxonomy_4_upper_length_3: WIR
+taxonomy_4_upper_length_4: WIRE
+taxonomy_4_upper_length_5: WIRE
+taxonomy_5: power
+taxonomy_5_capital: Power
+taxonomy_5_first_letter: p
+taxonomy_5_first_letter_upper: P
+taxonomy_5_length_1: p
+taxonomy_5_length_2: po
+taxonomy_5_length_3: pow
+taxonomy_5_length_4: powe
+taxonomy_5_length_5: power
+taxonomy_5_upper: POWER
+taxonomy_5_upper_length_1: P
+taxonomy_5_upper_length_2: PO
+taxonomy_5_upper_length_3: POW
+taxonomy_5_upper_length_4: POWE
+taxonomy_5_upper_length_5: POWER
+taxonomy_6: barrel_jack_2_1_mm
+taxonomy_6_capital: Barrel Jack 2.1 mm
+taxonomy_6_first_letter: b
+taxonomy_6_first_letter_upper: B
+taxonomy_6_length_1: b
+taxonomy_6_length_2: ba
+taxonomy_6_length_3: bar
+taxonomy_6_length_4: barr
+taxonomy_6_length_5: barre
+taxonomy_6_upper: BARREL_JACK_2_1_MM
+taxonomy_6_upper_length_1: B
+taxonomy_6_upper_length_2: BA
+taxonomy_6_upper_length_3: BAR
+taxonomy_6_upper_length_4: BARR
+taxonomy_6_upper_length_5: BARRE
+taxonomy_7: plate
+taxonomy_7_capital: Plate
+taxonomy_7_first_letter: p
+taxonomy_7_first_letter_upper: P
+taxonomy_7_length_1: p
+taxonomy_7_length_2: pl
+taxonomy_7_length_3: pla
+taxonomy_7_length_4: plat
+taxonomy_7_length_5: plate
+taxonomy_7_upper: PLATE
+taxonomy_7_upper_length_1: P
+taxonomy_7_upper_length_2: PL
+taxonomy_7_upper_length_3: PLA
+taxonomy_7_upper_length_4: PLAT
+taxonomy_7_upper_length_5: PLATE
+taxonomy_8: 3_width
+taxonomy_8_capital: 3 Width
+taxonomy_8_first_letter: '3'
+taxonomy_8_first_letter_upper: '3'
+taxonomy_8_length_1: '3'
+taxonomy_8_length_2: '3_'
+taxonomy_8_length_3: 3_w
+taxonomy_8_length_4: 3_wi
+taxonomy_8_length_5: 3_wid
+taxonomy_8_upper: 3_WIDTH
+taxonomy_8_upper_length_1: '3'
+taxonomy_8_upper_length_2: '3_'
+taxonomy_8_upper_length_3: 3_W
+taxonomy_8_upper_length_4: 3_WI
+taxonomy_8_upper_length_5: 3_WID
+taxonomy_9: 3_height
+taxonomy_9_capital: 3 Height
+taxonomy_9_first_letter: '3'
+taxonomy_9_first_letter_upper: '3'
+taxonomy_9_length_1: '3'
+taxonomy_9_length_2: '3_'
+taxonomy_9_length_3: 3_h
+taxonomy_9_length_4: 3_he
+taxonomy_9_length_5: 3_hei
+taxonomy_9_upper: 3_HEIGHT
+taxonomy_9_upper_length_1: '3'
+taxonomy_9_upper_length_2: '3_'
+taxonomy_9_upper_length_3: 3_H
+taxonomy_9_upper_length_4: 3_HE
+taxonomy_9_upper_length_5: 3_HEI
+thing:
+  bip_39_2_word_array:
+  - runway
+  - merry
+  bip_39_2_word_no_space: runwaymerry
+  bip_39_2_word_space: runway merry
+  bip_39_2_word_underscore: runway_merry
+  bip_39_3_word_array:
+  - runway
+  - merry
+  - great
+  bip_39_3_word_no_space: runwaymerrygreat
+  bip_39_3_word_space: runway merry great
+  bip_39_3_word_underscore: runway_merry_great
+  bip_39_full_array:
+  - runway
+  - merry
+  - great
+  - pluck
+  - robot
+  - fade
+  - office
+  - taxi
+  - kid
+  - soda
+  - arrow
+  - feature
+  bip_39_full_no_space: runwaymerrygreatpluckrobotfadeofficetaxikidsodaarrowfeature
+  bip_39_full_space: runway merry great pluck robot fade office taxi kid soda arrow
+    feature
+  bip_39_full_underscore: runway_merry_great_pluck_robot_fade_office_taxi_kid_soda_arrow_feature
+  classification: oobb
+  color: ''
+  components:
+  - - depth: 6.0
+      height: 3
+      pos:
+      - -25
+      - 0
+      - 0
+      shape: rounded_rectangle
+      size:
+      - 44
+      - 44
+      - 6.0
+      type: positive
+      width: 3
+  - - h: 200
+      inclusion: laser
+      pos:
+      - -40.0
+      - -15.0
+      - -97.0
+      r: 3.0
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 3dpr
+      pos:
+      - -40.0
+      - -15.0
+      - -97.0
+      r: 3.25
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 'true'
+      pos:
+      - -40.0
+      - -15.0
+      - -97.0
+      r: 3.0
+      shape: cylinder
+      type: negative
+  - - h: 200
+      inclusion: laser
+      pos:
+      - -10.0
+      - -15.0
+      - -97.0
+      r: 3.0
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 3dpr
+      pos:
+      - -10.0
+      - -15.0
+      - -97.0
+      r: 3.25
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 'true'
+      pos:
+      - -10.0
+      - -15.0
+      - -97.0
+      r: 3.0
+      shape: cylinder
+      type: negative
+  - - h: 200
+      inclusion: laser
+      pos:
+      - -40.0
+      - 15.0
+      - -97.0
+      r: 3.0
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 3dpr
+      pos:
+      - -40.0
+      - 15.0
+      - -97.0
+      r: 3.25
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 'true'
+      pos:
+      - -40.0
+      - 15.0
+      - -97.0
+      r: 3.0
+      shape: cylinder
+      type: negative
+  - - h: 200
+      inclusion: laser
+      pos:
+      - -10.0
+      - 15.0
+      - -97.0
+      r: 3.0
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 3dpr
+      pos:
+      - -10.0
+      - 15.0
+      - -97.0
+      r: 3.25
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 'true'
+      pos:
+      - -10.0
+      - 15.0
+      - -97.0
+      r: 3.0
+      shape: cylinder
+      type: negative
+  - - h: 200
+      inclusion: laser
+      pos:
+      - -40.0
+      - 0
+      - -97.0
+      r: 3.0
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 3dpr
+      pos:
+      - -40.0
+      - 0
+      - -97.0
+      r: 3.25
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 'true'
+      pos:
+      - -40.0
+      - 0
+      - -97.0
+      r: 3.0
+      shape: cylinder
+      type: negative
+  - - h: 200
+      inclusion: laser
+      pos:
+      - -10.0
+      - 0
+      - -97.0
+      r: 3.0
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 3dpr
+      pos:
+      - -10.0
+      - 0
+      - -97.0
+      r: 3.25
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 'true'
+      pos:
+      - -10.0
+      - 0
+      - -97.0
+      r: 3.0
+      shape: cylinder
+      type: negative
+  - - h: 8.0
+      pos:
+      - -23.73
+      - 15.0
+      - -1
+      r: 3.0
+      shape: cylinder
+      type: negative
+  - - h: 200
+      inclusion: laser
+      pos:
+      - -32.5
+      - 15.0
+      - -97.0
+      r: 1.5
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 3dpr
+      pos:
+      - -32.5
+      - 15.0
+      - -97.0
+      r: 1.8
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 'true'
+      pos:
+      - -32.5
+      - 15.0
+      - -97.0
+      r: 1.5
+      shape: cylinder
+      type: negative
+  - - h: 200
+      inclusion: laser
+      pos:
+      - -17.5
+      - 15.0
+      - -97.0
+      r: 1.5
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 3dpr
+      pos:
+      - -17.5
+      - 15.0
+      - -97.0
+      r: 1.8
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 'true'
+      pos:
+      - -17.5
+      - 15.0
+      - -97.0
+      r: 1.5
+      shape: cylinder
+      type: negative
+  - - h: 200
+      inclusion: laser
+      pos:
+      - -40.0
+      - -7.5
+      - -97.0
+      r: 1.5
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 3dpr
+      pos:
+      - -40.0
+      - -7.5
+      - -97.0
+      r: 1.8
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 'true'
+      pos:
+      - -40.0
+      - -7.5
+      - -97.0
+      r: 1.5
+      shape: cylinder
+      type: negative
+  - - h: 200
+      inclusion: laser
+      pos:
+      - -10.0
+      - -7.5
+      - -97.0
+      r: 1.5
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 3dpr
+      pos:
+      - -10.0
+      - -7.5
+      - -97.0
+      r: 1.8
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 'true'
+      pos:
+      - -10.0
+      - -7.5
+      - -97.0
+      r: 1.5
+      shape: cylinder
+      type: negative
+  - - h: 200
+      inclusion: laser
+      pos:
+      - -40.0
+      - 7.5
+      - -97.0
+      r: 1.5
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 3dpr
+      pos:
+      - -40.0
+      - 7.5
+      - -97.0
+      r: 1.8
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 'true'
+      pos:
+      - -40.0
+      - 7.5
+      - -97.0
+      r: 1.5
+      shape: cylinder
+      type: negative
+  - - h: 200
+      inclusion: laser
+      pos:
+      - -10.0
+      - 7.5
+      - -97.0
+      r: 1.5
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 3dpr
+      pos:
+      - -10.0
+      - 7.5
+      - -97.0
+      r: 1.8
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 'true'
+      pos:
+      - -10.0
+      - 7.5
+      - -97.0
+      r: 1.5
+      shape: cylinder
+      type: negative
+  - - pos:
+      - -25
+      - 0
+      - 1.5
+      r: 3.75
+      shape: rounded_rectangle
+      size:
+      - 20.25
+      - 20.25
+      - 6.5
+      type: negative
+  - - h: 12.375
+      pos:
+      - -25
+      - -22.0
+      - 6.0
+      r: 3.5
+      rot:
+      - -90
+      - 0
+      - 0
+      shape: cylinder
+      type: negative
+  - - depth: 6.0
+      height: 3
+      pos:
+      - 25
+      - 0
+      - 0
+      shape: rounded_rectangle
+      size:
+      - 44
+      - 44
+      - 6.0
+      type: positive
+      width: 3
+  - - h: 200
+      inclusion: laser
+      pos:
+      - 10.0
+      - -15.0
+      - -97.0
+      r: 3.0
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 3dpr
+      pos:
+      - 10.0
+      - -15.0
+      - -97.0
+      r: 3.25
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 'true'
+      pos:
+      - 10.0
+      - -15.0
+      - -97.0
+      r: 3.0
+      shape: cylinder
+      type: negative
+  - - h: 200
+      inclusion: laser
+      pos:
+      - 40.0
+      - -15.0
+      - -97.0
+      r: 3.0
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 3dpr
+      pos:
+      - 40.0
+      - -15.0
+      - -97.0
+      r: 3.25
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 'true'
+      pos:
+      - 40.0
+      - -15.0
+      - -97.0
+      r: 3.0
+      shape: cylinder
+      type: negative
+  - - h: 200
+      inclusion: laser
+      pos:
+      - 10.0
+      - 15.0
+      - -97.0
+      r: 3.0
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 3dpr
+      pos:
+      - 10.0
+      - 15.0
+      - -97.0
+      r: 3.25
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 'true'
+      pos:
+      - 10.0
+      - 15.0
+      - -97.0
+      r: 3.0
+      shape: cylinder
+      type: negative
+  - - h: 200
+      inclusion: laser
+      pos:
+      - 40.0
+      - 15.0
+      - -97.0
+      r: 3.0
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 3dpr
+      pos:
+      - 40.0
+      - 15.0
+      - -97.0
+      r: 3.25
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 'true'
+      pos:
+      - 40.0
+      - 15.0
+      - -97.0
+      r: 3.0
+      shape: cylinder
+      type: negative
+  - - h: 200
+      inclusion: laser
+      pos:
+      - 10.0
+      - 0
+      - -97.0
+      r: 3.0
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 3dpr
+      pos:
+      - 10.0
+      - 0
+      - -97.0
+      r: 3.25
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 'true'
+      pos:
+      - 10.0
+      - 0
+      - -97.0
+      r: 3.0
+      shape: cylinder
+      type: negative
+  - - h: 200
+      inclusion: laser
+      pos:
+      - 40.0
+      - 0
+      - -97.0
+      r: 3.0
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 3dpr
+      pos:
+      - 40.0
+      - 0
+      - -97.0
+      r: 3.25
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 'true'
+      pos:
+      - 40.0
+      - 0
+      - -97.0
+      r: 3.0
+      shape: cylinder
+      type: negative
+  - - h: 8.0
+      pos:
+      - 26.27
+      - 15.0
+      - -1
+      r: 3.0
+      shape: cylinder
+      type: negative
+  - - h: 200
+      inclusion: laser
+      pos:
+      - 17.5
+      - 15.0
+      - -97.0
+      r: 1.5
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 3dpr
+      pos:
+      - 17.5
+      - 15.0
+      - -97.0
+      r: 1.8
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 'true'
+      pos:
+      - 17.5
+      - 15.0
+      - -97.0
+      r: 1.5
+      shape: cylinder
+      type: negative
+  - - h: 200
+      inclusion: laser
+      pos:
+      - 32.5
+      - 15.0
+      - -97.0
+      r: 1.5
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 3dpr
+      pos:
+      - 32.5
+      - 15.0
+      - -97.0
+      r: 1.8
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 'true'
+      pos:
+      - 32.5
+      - 15.0
+      - -97.0
+      r: 1.5
+      shape: cylinder
+      type: negative
+  - - h: 200
+      inclusion: laser
+      pos:
+      - 10.0
+      - -7.5
+      - -97.0
+      r: 1.5
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 3dpr
+      pos:
+      - 10.0
+      - -7.5
+      - -97.0
+      r: 1.8
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 'true'
+      pos:
+      - 10.0
+      - -7.5
+      - -97.0
+      r: 1.5
+      shape: cylinder
+      type: negative
+  - - h: 200
+      inclusion: laser
+      pos:
+      - 40.0
+      - -7.5
+      - -97.0
+      r: 1.5
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 3dpr
+      pos:
+      - 40.0
+      - -7.5
+      - -97.0
+      r: 1.8
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 'true'
+      pos:
+      - 40.0
+      - -7.5
+      - -97.0
+      r: 1.5
+      shape: cylinder
+      type: negative
+  - - h: 200
+      inclusion: laser
+      pos:
+      - 10.0
+      - 7.5
+      - -97.0
+      r: 1.5
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 3dpr
+      pos:
+      - 10.0
+      - 7.5
+      - -97.0
+      r: 1.8
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 'true'
+      pos:
+      - 10.0
+      - 7.5
+      - -97.0
+      r: 1.5
+      shape: cylinder
+      type: negative
+  - - h: 200
+      inclusion: laser
+      pos:
+      - 40.0
+      - 7.5
+      - -97.0
+      r: 1.5
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 3dpr
+      pos:
+      - 40.0
+      - 7.5
+      - -97.0
+      r: 1.8
+      shape: cylinder
+      type: negative
+    - h: 200
+      inclusion: 'true'
+      pos:
+      - 40.0
+      - 7.5
+      - -97.0
+      r: 1.5
+      shape: cylinder
+      type: negative
+  - - pos:
+      - 25
+      - 0
+      - -1
+      r: 3.75
+      shape: rounded_rectangle
+      size:
+      - 20.25
+      - 20.25
+      - 8.0
+      type: negative
+  - - h: 12.375
+      pos:
+      - 25
+      - -22.0
+      - 0
+      r: 3.5
+      rot:
+      - -90
+      - 0
+      - 0
+      shape: cylinder
+      type: negative
+  components_objects:
+  - depth: 6.0
+    height: 3
+    pos:
+    - -25
+    - 0
+    - 0
+    shape: oobb_plate
+    spacer_floor: 1.5
+    spacer_type: little
+    type: positive
+    width: 3
+  - pos:
+    - -40.0
+    - -15.0
+    - 3.0
+    radius_name: m6
+    shape: oobb_hole
+    type: negative
+  - pos:
+    - -10.0
+    - -15.0
+    - 3.0
+    radius_name: m6
+    shape: oobb_hole
+    type: negative
+  - pos:
+    - -40.0
+    - 15.0
+    - 3.0
+    radius_name: m6
+    shape: oobb_hole
+    type: negative
+  - pos:
+    - -10.0
+    - 15.0
+    - 3.0
+    radius_name: m6
+    shape: oobb_hole
+    type: negative
+  - pos:
+    - -40.0
+    - 0
+    - 3.0
+    radius_name: m6
+    shape: oobb_hole
+    type: negative
+  - pos:
+    - -10.0
+    - 0
+    - 3.0
+    radius_name: m6
+    shape: oobb_hole
+    type: negative
+  - h: 8.0
+    pos:
+    - -23.73
+    - 15.0
+    - -1
+    r: 3.0
+    shape: cylinder
+    type: negative
+  - pos:
+    - -32.5
+    - 15.0
+    - 3.0
+    radius_name: m3
+    shape: oobb_hole
+    type: negative
+  - pos:
+    - -17.5
+    - 15.0
+    - 3.0
+    radius_name: m3
+    shape: oobb_hole
+    type: negative
+  - pos:
+    - -40.0
+    - -7.5
+    - 3.0
+    radius_name: m3
+    shape: oobb_hole
+    type: negative
+  - pos:
+    - -10.0
+    - -7.5
+    - 3.0
+    radius_name: m3
+    shape: oobb_hole
+    type: negative
+  - pos:
+    - -40.0
+    - 7.5
+    - 3.0
+    radius_name: m3
+    shape: oobb_hole
+    type: negative
+  - pos:
+    - -10.0
+    - 7.5
+    - 3.0
+    radius_name: m3
+    shape: oobb_hole
+    type: negative
+  - pos:
+    - -25
+    - 0
+    - 1.5
+    r: 3.75
+    shape: rounded_rectangle
+    size:
+    - 20.25
+    - 20.25
+    - 6.5
+    type: negative
+  - h: 12.375
+    pos:
+    - -25
+    - -22.0
+    - 6.0
+    r: 3.5
+    rot:
+    - -90
+    - 0
+    - 0
+    shape: cylinder
+    type: negative
+  - depth: 6.0
+    height: 3
+    pos:
+    - 25
+    - 0
+    - 0
+    shape: oobb_plate
+    spacer_floor: 0
+    spacer_type: little
+    type: positive
+    width: 3
+  - pos:
+    - 10.0
+    - -15.0
+    - 3.0
+    radius_name: m6
+    shape: oobb_hole
+    type: negative
+  - pos:
+    - 40.0
+    - -15.0
+    - 3.0
+    radius_name: m6
+    shape: oobb_hole
+    type: negative
+  - pos:
+    - 10.0
+    - 15.0
+    - 3.0
+    radius_name: m6
+    shape: oobb_hole
+    type: negative
+  - pos:
+    - 40.0
+    - 15.0
+    - 3.0
+    radius_name: m6
+    shape: oobb_hole
+    type: negative
+  - pos:
+    - 10.0
+    - 0
+    - 3.0
+    radius_name: m6
+    shape: oobb_hole
+    type: negative
+  - pos:
+    - 40.0
+    - 0
+    - 3.0
+    radius_name: m6
+    shape: oobb_hole
+    type: negative
+  - h: 8.0
+    pos:
+    - 26.27
+    - 15.0
+    - -1
+    r: 3.0
+    shape: cylinder
+    type: negative
+  - pos:
+    - 17.5
+    - 15.0
+    - 3.0
+    radius_name: m3
+    shape: oobb_hole
+    type: negative
+  - pos:
+    - 32.5
+    - 15.0
+    - 3.0
+    radius_name: m3
+    shape: oobb_hole
+    type: negative
+  - pos:
+    - 10.0
+    - -7.5
+    - 3.0
+    radius_name: m3
+    shape: oobb_hole
+    type: negative
+  - pos:
+    - 40.0
+    - -7.5
+    - 3.0
+    radius_name: m3
+    shape: oobb_hole
+    type: negative
+  - pos:
+    - 10.0
+    - 7.5
+    - 3.0
+    radius_name: m3
+    shape: oobb_hole
+    type: negative
+  - pos:
+    - 40.0
+    - 7.5
+    - 3.0
+    radius_name: m3
+    shape: oobb_hole
+    type: negative
+  - pos:
+    - 25
+    - 0
+    - -1
+    r: 3.75
+    shape: rounded_rectangle
+    size:
+    - 20.25
+    - 20.25
+    - 8.0
+    type: negative
+  - h: 12.375
+    pos:
+    - 25
+    - -22.0
+    - 0
+    r: 3.5
+    rot:
+    - -90
+    - 0
+    - 0
+    shape: cylinder
+    type: negative
+  components_string:
+  - oobb_plate_shape_positive_type_6.0_depth_-25_0_0_pos_3_width_3_height_little_spacer_type_1.5_spacer_floor
+  - oobb_hole_shape_negative_type_m6_radius_name_-40.0_-15.0_3.0_pos
+  - oobb_hole_shape_negative_type_m6_radius_name_-10.0_-15.0_3.0_pos
+  - oobb_hole_shape_negative_type_m6_radius_name_-40.0_15.0_3.0_pos
+  - oobb_hole_shape_negative_type_m6_radius_name_-10.0_15.0_3.0_pos
+  - oobb_hole_shape_negative_type_m6_radius_name_-40.0_0_3.0_pos
+  - oobb_hole_shape_negative_type_m6_radius_name_-10.0_0_3.0_pos
+  - cylinder_shape_negative_type_-23.73_15.0_-1_pos_3.0_r_8.0_h
+  - oobb_hole_shape_negative_type_m3_radius_name_-32.5_15.0_3.0_pos
+  - oobb_hole_shape_negative_type_m3_radius_name_-17.5_15.0_3.0_pos
+  - oobb_hole_shape_negative_type_m3_radius_name_-40.0_-7.5_3.0_pos
+  - oobb_hole_shape_negative_type_m3_radius_name_-10.0_-7.5_3.0_pos
+  - oobb_hole_shape_negative_type_m3_radius_name_-40.0_7.5_3.0_pos
+  - oobb_hole_shape_negative_type_m3_radius_name_-10.0_7.5_3.0_pos
+  - rounded_rectangle_shape_negative_type_-25_0_1.5_pos_20.25_20.25_6.5_size_3.75_r
+  - cylinder_shape_negative_type_-25_-22.0_6.0_pos_3.5_r_12.375_h_-90_0_0_rot
+  - oobb_plate_shape_positive_type_6.0_depth_25_0_0_pos_3_width_3_height_little_spacer_type_0_spacer_floor
+  - oobb_hole_shape_negative_type_m6_radius_name_10.0_-15.0_3.0_pos
+  - oobb_hole_shape_negative_type_m6_radius_name_40.0_-15.0_3.0_pos
+  - oobb_hole_shape_negative_type_m6_radius_name_10.0_15.0_3.0_pos
+  - oobb_hole_shape_negative_type_m6_radius_name_40.0_15.0_3.0_pos
+  - oobb_hole_shape_negative_type_m6_radius_name_10.0_0_3.0_pos
+  - oobb_hole_shape_negative_type_m6_radius_name_40.0_0_3.0_pos
+  - cylinder_shape_negative_type_26.27_15.0_-1_pos_3.0_r_8.0_h
+  - oobb_hole_shape_negative_type_m3_radius_name_17.5_15.0_3.0_pos
+  - oobb_hole_shape_negative_type_m3_radius_name_32.5_15.0_3.0_pos
+  - oobb_hole_shape_negative_type_m3_radius_name_10.0_-7.5_3.0_pos
+  - oobb_hole_shape_negative_type_m3_radius_name_40.0_-7.5_3.0_pos
+  - oobb_hole_shape_negative_type_m3_radius_name_10.0_7.5_3.0_pos
+  - oobb_hole_shape_negative_type_m3_radius_name_40.0_7.5_3.0_pos
+  - rounded_rectangle_shape_negative_type_25_0_-1_pos_20.25_20.25_8.0_size_3.75_r
+  - cylinder_shape_negative_type_25_-22.0_0_pos_3.5_r_12.375_h_-90_0_0_rot
+  depth: 12
+  description: C:\gh\oomlout oobb electronic version 5 wire barrel jack 3x3x0
+  description_extra: 12_depth
+  description_main: 3_width_3_height
+  directory: parts/oobb_part_electronic_wire_power_barrel_jack_2_1_mm_plate_3_width_3_height_12_depth_bottom_solid
+  height: 3
+  height_mm: 44
+  id: oobb_part_electronic_wire_power_barrel_jack_2_1_mm_plate_3_width_3_height_12_depth_bottom_solid
+  id_no_class: oobb_part_electronic_wire_power_barrel_jack_2_1_mm_plate_3_width_3_height_12_depth
+  id_no_size: oobb_part_electronic_wire_power_barrel_jack_2_1_mm_plate_3_width_3_height_12_depth
+  id_no_type: oobb_part_electronic_wire_power_barrel_jack_2_1_mm_plate_3_width_3_height_12_depth
+  id_oobb: oobb_part_electronic_wire_power_barrel_jack_2_1_mm_plate_3_width_3_height_12_depth_bottom_solid
+  kwargs:
+    depth: 12
+    filter: ''
+    height: 3
+    modes:
+    - 3dpr
+    navigation: true
+    oobb_name: wire_barrel_jack
+    oomp_description_extra: 12_depth
+    oomp_description_main: wire_barrel_jack_3_width_3_height
+    oomp_mode: project
+    oomp_run: true
+    overwrite: true
+    save_type: all
+    taxonomy_1: oobb
+    taxonomy_10: 12_depth
+    taxonomy_11: bottom_solid
+    taxonomy_12: ''
+    taxonomy_13: ''
+    taxonomy_14: ''
+    taxonomy_15: ''
+    taxonomy_2: part
+    taxonomy_3: electronic
+    taxonomy_4: wire
+    taxonomy_5: power
+    taxonomy_6: barrel_jack_2_1_mm
+    taxonomy_7: plate
+    taxonomy_8: 3_width
+    taxonomy_9: 3_height
+    typ: all
+    type: C:\gh\oomlout_oobb_electronic_version_5_wire_barrel_jack
+    width: 3
+    wire_style: bottom_solid
+    wire_type: power
+  link_github: https://github.com/oomlout/oomlout_oomp_version_1_messy/tree/main/parts/oobb_part_electronic_wire_power_barrel_jack_2_1_mm_plate_3_width_3_height_12_depth
+  link_main: https://github.com/oomlout/oomlout_oomp_version_1_messy/tree/main/parts/oobb_part_electronic_wire_power_barrel_jack_2_1_mm_plate_3_width_3_height_12_depth
+  link_redirect: https://github.com/oomlout/oomlout_oomp_version_1_messy/tree/main/parts/oobb_part_electronic_wire_power_barrel_jack_2_1_mm_plate_3_width_3_height_12_depth
+  manufacturer: ''
+  md5: bd717598d35bb2a3a666f37a59c432aa
+  md5_10: bd717598d3
+  md5_10_upper: BD717598D3
+  md5_5: bd717
+  md5_5_upper: BD717
+  md5_6: bd7175
+  md5_6_alpha: 7e3qt
+  md5_6_alpha_upper: 7E3QT
+  md5_6_upper: BD7175
+  name: oobb_part_electronic_wire_power_barrel_jack_2_1_mm_plate_3_width_3_height_12_depth_bottom_solid
+  name_no_class: Oobb Part Electronic Wire Power Barrel Jack 2 1 Mm Plate 3 Width
+    3 Height 9 Depth Bottom Solid
+  name_no_size: Oobb Part Electronic Wire Power Barrel Jack 2 1 Mm Plate 3 Width 3
+    Height 9 Depth Bottom Solid
+  name_no_type: Oobb Part Electronic Wire Power Barrel Jack 2 1 Mm Plate 3 Width 3
+    Height 9 Depth Bottom Solid
+  name_proper: Oobb Part Electronic Wire Power Barrel Jack 2 1 Mm Plate 3 Width 3
+    Height 9 Depth Bottom Solid
+  name_short: C:\Gh\Oomlout Oobb Electronic Version 5
+  name_space: oobb part electronic wire power barrel jack 2 1 mm plate 3 width 3 height
+    9 depth bottom solid
+  name_text: Oobb Part C:\Gh\Oomlout Oobb Electronic Version 5 Wire Barrel Jack 3
+    Width 3 Height 12 Depth
+  name_upper: OOBB PART ELECTRONIC WIRE POWER BARREL JACK 2 1 MM PLATE 3 WIDTH 3 HEIGHT
+    9 DEPTH BOTTOM SOLID
+  oobb_details:
+    depth: 12
+    height: 3
+    oobb_name: wire_barrel_jack
+    width: 3
+    wire_style: bottom_solid
+    wire_type: power
+  oobb_name: wire_barrel_jack
+  oomlout_ai_roboclick_1:
+    actions:
+    - command: text_jinja_template
+      convert_to_pdf: false
+      convert_to_png: false
+      dict_data:
+        depth: 9
+        directory: parts\oobb_part_electronic_wire_power_barrel_jack_2_1_mm_plate_3_width_3_height_12_depth
+        height: 3
+        name: oobb_part_electronic_wire_power_barrel_jack_2_1_mm_plate_3_width_3_height_12_depth
+        name_proper: Oobb Part Electronic Wire Power Barrel Jack 2 1 Mm Plate 3 Width
+          3 Height 9 Depth
+        name_space: oobb part electronic wire power barrel jack 2 1 mm plate 3 width
+          3 height 9 depth
+        name_upper: OOBB PART ELECTRONIC WIRE POWER BARREL JACK 2 1 MM PLATE 3 WIDTH
+          3 HEIGHT 9 DEPTH
+        oobb_details:
+          depth: 9
+          height: 3
+          oobb_name: wire_barrel_jack
+          width: 3
+          wire_style: ''
+          wire_type: power
+        part_category: wire
+        part_style: ''
+        part_type: power
+        taxonomy_1: oobb
+        taxonomy_10: 12_depth
+        taxonomy_11: ''
+        taxonomy_12: ''
+        taxonomy_13: ''
+        taxonomy_14: ''
+        taxonomy_15: ''
+        taxonomy_2: part
+        taxonomy_3: electronic
+        taxonomy_4: wire
+        taxonomy_5: power
+        taxonomy_6: barrel_jack_2_1_mm
+        taxonomy_7: plate
+        taxonomy_8: 3_width
+        taxonomy_9: 3_height
+        url_chat: ''
+        width: 3
+      dict_data_files: {}
+      dict_data_files_exists: {}
+      file_output: label_oomp.svg
+      file_template: C:\gh\oomlout_oobb_electronic_version_5\source_file\template_jinja\template_jinja_label_oomlout_76_2_mm_50_8_mm\working.svg.j2
+      search_and_replace: []
+    file_test: label_oomp.pdf
+    retries_until_complete: 0
+  oomp_key: oomp_oobb_part_electronic_wire_power_barrel_jack_2_1_mm_plate_3_width_3_height_12_depth_bottom_solid
+  part_category: wire
+  part_number: ''
+  part_style: bottom_solid
+  part_type: power
+  project_name: C:\gh\oomlout_oobb_electronic_version_5
+  short_name: ''
+  size: C:\gh\oomlout_oobb_electronic_version_5_wire_barrel_jack
+  taxonomy_1: oobb
+  taxonomy_10: 12_depth
+  taxonomy_10_capital: 9 Depth
+  taxonomy_10_first_letter: '9'
+  taxonomy_10_first_letter_upper: '9'
+  taxonomy_10_length_1: '9'
+  taxonomy_10_length_2: '9_'
+  taxonomy_10_length_3: 9_d
+  taxonomy_10_length_4: 9_de
+  taxonomy_10_length_5: 9_dep
+  taxonomy_10_upper: 9_DEPTH
+  taxonomy_10_upper_length_1: '9'
+  taxonomy_10_upper_length_2: '9_'
+  taxonomy_10_upper_length_3: 9_D
+  taxonomy_10_upper_length_4: 9_DE
+  taxonomy_10_upper_length_5: 9_DEP
+  taxonomy_11: bottom_solid
+  taxonomy_12: ''
+  taxonomy_13: ''
+  taxonomy_14: ''
+  taxonomy_15: ''
+  taxonomy_1_capital: Oobb
+  taxonomy_1_first_letter: o
+  taxonomy_1_first_letter_upper: O
+  taxonomy_1_length_1: o
+  taxonomy_1_length_2: oo
+  taxonomy_1_length_3: oob
+  taxonomy_1_length_4: oobb
+  taxonomy_1_length_5: oobb
+  taxonomy_1_upper: OOBB
+  taxonomy_1_upper_length_1: O
+  taxonomy_1_upper_length_2: OO
+  taxonomy_1_upper_length_3: OOB
+  taxonomy_1_upper_length_4: OOBB
+  taxonomy_1_upper_length_5: OOBB
+  taxonomy_2: part
+  taxonomy_2_capital: Part
+  taxonomy_2_first_letter: p
+  taxonomy_2_first_letter_upper: P
+  taxonomy_2_length_1: p
+  taxonomy_2_length_2: pa
+  taxonomy_2_length_3: par
+  taxonomy_2_length_4: part
+  taxonomy_2_length_5: part
+  taxonomy_2_upper: PART
+  taxonomy_2_upper_length_1: P
+  taxonomy_2_upper_length_2: PA
+  taxonomy_2_upper_length_3: PAR
+  taxonomy_2_upper_length_4: PART
+  taxonomy_2_upper_length_5: PART
+  taxonomy_3: electronic
+  taxonomy_3_capital: Electronic
+  taxonomy_3_first_letter: e
+  taxonomy_3_first_letter_upper: E
+  taxonomy_3_length_1: e
+  taxonomy_3_length_2: el
+  taxonomy_3_length_3: ele
+  taxonomy_3_length_4: elec
+  taxonomy_3_length_5: elect
+  taxonomy_3_upper: ELECTRONIC
+  taxonomy_3_upper_length_1: E
+  taxonomy_3_upper_length_2: EL
+  taxonomy_3_upper_length_3: ELE
+  taxonomy_3_upper_length_4: ELEC
+  taxonomy_3_upper_length_5: ELECT
+  taxonomy_4: wire
+  taxonomy_4_capital: Wire
+  taxonomy_4_first_letter: w
+  taxonomy_4_first_letter_upper: W
+  taxonomy_4_length_1: w
+  taxonomy_4_length_2: wi
+  taxonomy_4_length_3: wir
+  taxonomy_4_length_4: wire
+  taxonomy_4_length_5: wire
+  taxonomy_4_upper: WIRE
+  taxonomy_4_upper_length_1: W
+  taxonomy_4_upper_length_2: WI
+  taxonomy_4_upper_length_3: WIR
+  taxonomy_4_upper_length_4: WIRE
+  taxonomy_4_upper_length_5: WIRE
+  taxonomy_5: power
+  taxonomy_5_capital: Power
+  taxonomy_5_first_letter: p
+  taxonomy_5_first_letter_upper: P
+  taxonomy_5_length_1: p
+  taxonomy_5_length_2: po
+  taxonomy_5_length_3: pow
+  taxonomy_5_length_4: powe
+  taxonomy_5_length_5: power
+  taxonomy_5_upper: POWER
+  taxonomy_5_upper_length_1: P
+  taxonomy_5_upper_length_2: PO
+  taxonomy_5_upper_length_3: POW
+  taxonomy_5_upper_length_4: POWE
+  taxonomy_5_upper_length_5: POWER
+  taxonomy_6: barrel_jack_2_1_mm
+  taxonomy_6_capital: Barrel Jack 2.1 mm
+  taxonomy_6_first_letter: b
+  taxonomy_6_first_letter_upper: B
+  taxonomy_6_length_1: b
+  taxonomy_6_length_2: ba
+  taxonomy_6_length_3: bar
+  taxonomy_6_length_4: barr
+  taxonomy_6_length_5: barre
+  taxonomy_6_upper: BARREL_JACK_2_1_MM
+  taxonomy_6_upper_length_1: B
+  taxonomy_6_upper_length_2: BA
+  taxonomy_6_upper_length_3: BAR
+  taxonomy_6_upper_length_4: BARR
+  taxonomy_6_upper_length_5: BARRE
+  taxonomy_7: plate
+  taxonomy_7_capital: Plate
+  taxonomy_7_first_letter: p
+  taxonomy_7_first_letter_upper: P
+  taxonomy_7_length_1: p
+  taxonomy_7_length_2: pl
+  taxonomy_7_length_3: pla
+  taxonomy_7_length_4: plat
+  taxonomy_7_length_5: plate
+  taxonomy_7_upper: PLATE
+  taxonomy_7_upper_length_1: P
+  taxonomy_7_upper_length_2: PL
+  taxonomy_7_upper_length_3: PLA
+  taxonomy_7_upper_length_4: PLAT
+  taxonomy_7_upper_length_5: PLATE
+  taxonomy_8: 3_width
+  taxonomy_8_capital: 3 Width
+  taxonomy_8_first_letter: '3'
+  taxonomy_8_first_letter_upper: '3'
+  taxonomy_8_length_1: '3'
+  taxonomy_8_length_2: '3_'
+  taxonomy_8_length_3: 3_w
+  taxonomy_8_length_4: 3_wi
+  taxonomy_8_length_5: 3_wid
+  taxonomy_8_upper: 3_WIDTH
+  taxonomy_8_upper_length_1: '3'
+  taxonomy_8_upper_length_2: '3_'
+  taxonomy_8_upper_length_3: 3_W
+  taxonomy_8_upper_length_4: 3_WI
+  taxonomy_8_upper_length_5: 3_WID
+  taxonomy_9: 3_height
+  taxonomy_9_capital: 3 Height
+  taxonomy_9_first_letter: '3'
+  taxonomy_9_first_letter_upper: '3'
+  taxonomy_9_length_1: '3'
+  taxonomy_9_length_2: '3_'
+  taxonomy_9_length_3: 3_h
+  taxonomy_9_length_4: 3_he
+  taxonomy_9_length_5: 3_hei
+  taxonomy_9_upper: 3_HEIGHT
+  taxonomy_9_upper_length_1: '3'
+  taxonomy_9_upper_length_2: '3_'
+  taxonomy_9_upper_length_3: 3_H
+  taxonomy_9_upper_length_4: 3_HE
+  taxonomy_9_upper_length_5: 3_HEI
+  type: part
+  url_chat: ''
+  width: 3
+  width_mm: 44
+url_chat: ''
+width: 3
