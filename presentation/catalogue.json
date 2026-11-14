@@ -1,0 +1,509 @@
+{
+  "schema": 1,
+  "renders": [
+    {
+      "id": "oobb_part_electronic_spacer_big_plate_3_width_3_height_4_depth",
+      "variant": "3dpr",
+      "source": "parts/oobb_part_electronic_spacer_big_plate_3_width_3_height_4_depth/3dpr.stl",
+      "source_sha256": "dafc18aafb7e279c2cdb95c31ad61c1477cad984f47179410d715c2efc65b07e",
+      "image": "parts/oobb_part_electronic_spacer_big_plate_3_width_3_height_4_depth/3dpr_presentation.png",
+      "dimensions_mm": [
+        44.0,
+        43.98,
+        4.0
+      ],
+      "key": "eab9907062a1fb42072b89b4",
+      "sheet_version": 1,
+      "renderer_sha256": "381b23f18ce1a9e05327b876214573ca7046fd871c07fbb493305a9cf8143001",
+      "blender": "Blender 5.2.2 LTS",
+      "label": "Electronic Spacer Big Plate 3 Width 3 Height 4 Depth \u2014 Print layout",
+      "image_sha256": "a4d362d77e547dd87ff8ad970366b37d0bf8a57f36a148f0f4c55f6a0df85ccb"
+    },
+    {
+      "id": "oobb_part_electronic_spacer_big_plate_3_width_3_height_4_depth_countersunk_style",
+      "variant": "3dpr",
+      "source": "parts/oobb_part_electronic_spacer_big_plate_3_width_3_height_4_depth_countersunk_style/3dpr.stl",
+      "source_sha256": "4dbc752348790ef5171b66d8ae5630c619385be51b8ca1cc50f81fd1d817811b",
+      "image": "parts/oobb_part_electronic_spacer_big_plate_3_width_3_height_4_depth_countersunk_style/3dpr_presentation.png",
+      "dimensions_mm": [
+        44.0,
+        43.98,
+        4.0
+      ],
+      "key": "c957f0852859d9a37a2d8f1a",
+      "sheet_version": 1,
+      "renderer_sha256": "381b23f18ce1a9e05327b876214573ca7046fd871c07fbb493305a9cf8143001",
+      "blender": "Blender 5.2.2 LTS",
+      "label": "Electronic Spacer Big Plate 3 Width 3 Height 4 Depth Countersunk Style \u2014 Print layout",
+      "image_sha256": "f3dae28bb9aea7c11661f0ac47b1b4002518f932fce97878c8c2422000416f1c"
+    },
+    {
+      "id": "oobb_part_electronic_spacer_big_plate_3_width_3_height_4_depth_nut_style",
+      "variant": "3dpr",
+      "source": "parts/oobb_part_electronic_spacer_big_plate_3_width_3_height_4_depth_nut_style/3dpr.stl",
+      "source_sha256": "6005370ff95817b0bbb750e286188704c29e36e2a4fa0222b630b05015397e28",
+      "image": "parts/oobb_part_electronic_spacer_big_plate_3_width_3_height_4_depth_nut_style/3dpr_presentation.png",
+      "dimensions_mm": [
+        44.0,
+        43.98,
+        4.0
+      ],
+      "key": "ed3fd0ab5b91f67f093f65f8",
+      "sheet_version": 1,
+      "renderer_sha256": "381b23f18ce1a9e05327b876214573ca7046fd871c07fbb493305a9cf8143001",
+      "blender": "Blender 5.2.2 LTS",
+      "label": "Electronic Spacer Big Plate 3 Width 3 Height 4 Depth Nut Style \u2014 Print layout",
+      "image_sha256": "ce292850f83c64eda3b09ea6e0045faa5a66b9f929d6dca1e7ec0622f0d09cc8"
+    },
+    {
+      "id": "oobb_part_electronic_spacer_hole_plate_3_width_3_height_4_depth",
+      "variant": "3dpr",
+      "source": "parts/oobb_part_electronic_spacer_hole_plate_3_width_3_height_4_depth/3dpr.stl",
+      "source_sha256": "6fd372a4c7af0d519163d33f2f7951ab6ace1225a4616a0d677b7d17d51965b0",
+      "image": "parts/oobb_part_electronic_spacer_hole_plate_3_width_3_height_4_depth/3dpr_presentation.png",
+      "dimensions_mm": [
+        44.0,
+        43.98,
+        4.0
+      ],
+      "key": "ffa336d278514f652b3cd1fd",
+      "sheet_version": 1,
+      "renderer_sha256": "381b23f18ce1a9e05327b876214573ca7046fd871c07fbb493305a9cf8143001",
+      "blender": "Blender 5.2.2 LTS",
+      "label": "Electronic Spacer Hole Plate 3 Width 3 Height 4 Depth \u2014 Print layout",
+      "image_sha256": "6b7df5599617c0ed068c62635e742dd8845c93083826c6ecc83cd6adeb49db23"
+    },
+    {
+      "id": "oobb_part_electronic_spacer_hole_plate_3_width_3_height_4_depth_countersunk_style",
+      "variant": "3dpr",
+      "source": "parts/oobb_part_electronic_spacer_hole_plate_3_width_3_height_4_depth_countersunk_style/3dpr.stl",
+      "source_sha256": "5db1a3a33d654ca910d17bc4b692fd192b7fadd50b03fdc30d14b12c747acf47",
+      "image": "parts/oobb_part_electronic_spacer_hole_plate_3_width_3_height_4_depth_countersunk_style/3dpr_presentation.png",
+      "dimensions_mm": [
+        44.0,
+        43.98,
+        4.0
+      ],
+      "key": "42a593ab8503914c7cb6fd98",
+      "sheet_version": 1,
+      "renderer_sha256": "381b23f18ce1a9e05327b876214573ca7046fd871c07fbb493305a9cf8143001",
+      "blender": "Blender 5.2.2 LTS",
+      "label": "Electronic Spacer Hole Plate 3 Width 3 Height 4 Depth Countersunk Style \u2014 Print layout",
+      "image_sha256": "9a5e22ffb7c2cbbe4e7be0f0277f1c75126a035db0706db5ee26b3702e422a1d"
+    },
+    {
+      "id": "oobb_part_electronic_spacer_hole_plate_3_width_3_height_4_depth_nut_style",
+      "variant": "3dpr",
+      "source": "parts/oobb_part_electronic_spacer_hole_plate_3_width_3_height_4_depth_nut_style/3dpr.stl",
+      "source_sha256": "2e4c79b64f8b6615497b9d196adc4b07c27f4e1b3f8d0ab51c323735c1a492c0",
+      "image": "parts/oobb_part_electronic_spacer_hole_plate_3_width_3_height_4_depth_nut_style/3dpr_presentation.png",
+      "dimensions_mm": [
+        44.0,
+        43.98,
+        4.0
+      ],
+      "key": "4d71d654d79cdffadc1b3d75",
+      "sheet_version": 1,
+      "renderer_sha256": "381b23f18ce1a9e05327b876214573ca7046fd871c07fbb493305a9cf8143001",
+      "blender": "Blender 5.2.2 LTS",
+      "label": "Electronic Spacer Hole Plate 3 Width 3 Height 4 Depth Nut Style \u2014 Print layout",
+      "image_sha256": "f8b9b9329ec62ef8c419396dab20682c69859e863486880422d1eef4544493f0"
+    },
+    {
+      "id": "oobb_part_electronic_spacer_little_plate_3_width_3_height_4_depth",
+      "variant": "3dpr",
+      "source": "parts/oobb_part_electronic_spacer_little_plate_3_width_3_height_4_depth/3dpr.stl",
+      "source_sha256": "7c877e45447be2e0940999f2a72cf9107e9c5520f7841949df6054a5b8ce870e",
+      "image": "parts/oobb_part_electronic_spacer_little_plate_3_width_3_height_4_depth/3dpr_presentation.png",
+      "dimensions_mm": [
+        44.0,
+        43.98,
+        4.0
+      ],
+      "key": "f1f487c3ff7d43b01adc6685",
+      "sheet_version": 1,
+      "renderer_sha256": "381b23f18ce1a9e05327b876214573ca7046fd871c07fbb493305a9cf8143001",
+      "blender": "Blender 5.2.2 LTS",
+      "label": "Electronic Spacer Little Plate 3 Width 3 Height 4 Depth \u2014 Print layout",
+      "image_sha256": "e6eb45d5b795613f8736b2bf923b67eddfa5da888c105309157ccfcc3fa54d7c"
+    },
+    {
+      "id": "oobb_part_electronic_spacer_little_plate_3_width_3_height_4_depth_countersunk_style",
+      "variant": "3dpr",
+      "source": "parts/oobb_part_electronic_spacer_little_plate_3_width_3_height_4_depth_countersunk_style/3dpr.stl",
+      "source_sha256": "8d0dfbf06a5059ae61194f4b20739d49a2e779f09547a7b87b504fe79c3a31d7",
+      "image": "parts/oobb_part_electronic_spacer_little_plate_3_width_3_height_4_depth_countersunk_style/3dpr_presentation.png",
+      "dimensions_mm": [
+        44.0,
+        43.98,
+        4.0
+      ],
+      "key": "9de0b34f7d5e79c35e0470a7",
+      "sheet_version": 1,
+      "renderer_sha256": "381b23f18ce1a9e05327b876214573ca7046fd871c07fbb493305a9cf8143001",
+      "blender": "Blender 5.2.2 LTS",
+      "label": "Electronic Spacer Little Plate 3 Width 3 Height 4 Depth Countersunk Style \u2014 Print layout",
+      "image_sha256": "ac471cbea1658a256619091c5f24c33859b3303b9ffc82363dc9b0e97885cbaf"
+    },
+    {
+      "id": "oobb_part_electronic_spacer_little_plate_3_width_3_height_4_depth_nut_style",
+      "variant": "3dpr",
+      "source": "parts/oobb_part_electronic_spacer_little_plate_3_width_3_height_4_depth_nut_style/3dpr.stl",
+      "source_sha256": "b9f24b9a387e626d72a15322538b66456b3673d6b6c2bfeab30397e61d3a6283",
+      "image": "parts/oobb_part_electronic_spacer_little_plate_3_width_3_height_4_depth_nut_style/3dpr_presentation.png",
+      "dimensions_mm": [
+        44.0,
+        43.98,
+        4.0
+      ],
+      "key": "aa753bdb840ffec4b717b1cc",
+      "sheet_version": 1,
+      "renderer_sha256": "381b23f18ce1a9e05327b876214573ca7046fd871c07fbb493305a9cf8143001",
+      "blender": "Blender 5.2.2 LTS",
+      "label": "Electronic Spacer Little Plate 3 Width 3 Height 4 Depth Nut Style \u2014 Print layout",
+      "image_sha256": "81c198efd18f62f97876377046544807d62294fc9539c18d76140d3f807e9733"
+    },
+    {
+      "id": "oobb_part_electronic_spacer_solid_plate_3_width_3_height_4_depth",
+      "variant": "3dpr",
+      "source": "parts/oobb_part_electronic_spacer_solid_plate_3_width_3_height_4_depth/3dpr.stl",
+      "source_sha256": "d25f1f21b9af6db6d1473ed8d781dd209bae5e412dfe40651a49e4f1705a6140",
+      "image": "parts/oobb_part_electronic_spacer_solid_plate_3_width_3_height_4_depth/3dpr_presentation.png",
+      "dimensions_mm": [
+        44.0,
+        43.98,
+        4.0
+      ],
+      "key": "f57aab664453c874e49acc61",
+      "sheet_version": 1,
+      "renderer_sha256": "381b23f18ce1a9e05327b876214573ca7046fd871c07fbb493305a9cf8143001",
+      "blender": "Blender 5.2.2 LTS",
+      "label": "Electronic Spacer Solid Plate 3 Width 3 Height 4 Depth \u2014 Print layout",
+      "image_sha256": "5f6a55fab6d1afbebae666b57afb7cd443e39cc08405dbd9bc10d95af45df9b6"
+    },
+    {
+      "id": "oobb_part_electronic_spacer_solid_plate_3_width_3_height_4_depth_countersunk_style",
+      "variant": "3dpr",
+      "source": "parts/oobb_part_electronic_spacer_solid_plate_3_width_3_height_4_depth_countersunk_style/3dpr.stl",
+      "source_sha256": "4d43a2f7a9fcff54ebe16a59b153729dfeb957d38275cc7c695c24a0aa31135d",
+      "image": "parts/oobb_part_electronic_spacer_solid_plate_3_width_3_height_4_depth_countersunk_style/3dpr_presentation.png",
+      "dimensions_mm": [
+        44.0,
+        43.98,
+        4.0
+      ],
+      "key": "6f7fc49284cdc48261b26856",
+      "sheet_version": 1,
+      "renderer_sha256": "381b23f18ce1a9e05327b876214573ca7046fd871c07fbb493305a9cf8143001",
+      "blender": "Blender 5.2.2 LTS",
+      "label": "Electronic Spacer Solid Plate 3 Width 3 Height 4 Depth Countersunk Style \u2014 Print layout",
+      "image_sha256": "2418384d46fefd5de5f46cc285b77d360cbb53cf13b5333ca1d8ce3b5f4eb5a9"
+    },
+    {
+      "id": "oobb_part_electronic_spacer_solid_plate_3_width_3_height_4_depth_nut_style",
+      "variant": "3dpr",
+      "source": "parts/oobb_part_electronic_spacer_solid_plate_3_width_3_height_4_depth_nut_style/3dpr.stl",
+      "source_sha256": "8cedf3be40e6fa735f1f161af34eb439c8f890e845696502d83cd5992444d44f",
+      "image": "parts/oobb_part_electronic_spacer_solid_plate_3_width_3_height_4_depth_nut_style/3dpr_presentation.png",
+      "dimensions_mm": [
+        44.0,
+        43.98,
+        4.0
+      ],
+      "key": "04a6e2b4a8677beee3b00426",
+      "sheet_version": 1,
+      "renderer_sha256": "381b23f18ce1a9e05327b876214573ca7046fd871c07fbb493305a9cf8143001",
+      "blender": "Blender 5.2.2 LTS",
+      "label": "Electronic Spacer Solid Plate 3 Width 3 Height 4 Depth Nut Style \u2014 Print layout",
+      "image_sha256": "9eae36fc971e77f4c7ed35ca92b45fbfbf204ae4202b1e8cc93c88e4d3bfdec7"
+    },
+    {
+      "id": "oobb_part_electronic_wire_basic_plate_3_width_3_height_10_16_depth_triple_pin_header_3_multiple",
+      "variant": "3dpr",
+      "source": "parts/oobb_part_electronic_wire_basic_plate_3_width_3_height_10_16_depth_triple_pin_header_3_multiple/3dpr.stl",
+      "source_sha256": "3d0b051f1c8f25859377645ab7d6bab375cb3e0c7f696a99b08265f0628096a0",
+      "image": "parts/oobb_part_electronic_wire_basic_plate_3_width_3_height_10_16_depth_triple_pin_header_3_multiple/3dpr_presentation.png",
+      "dimensions_mm": [
+        94.0,
+        43.98,
+        10.16
+      ],
+      "key": "8cd70e0f155dbeb8fda513ac",
+      "sheet_version": 1,
+      "renderer_sha256": "381b23f18ce1a9e05327b876214573ca7046fd871c07fbb493305a9cf8143001",
+      "blender": "Blender 5.2.2 LTS",
+      "label": "Electronic Wire Basic Plate 3 Width 3 Height 10 16 Depth Triple Pin Header 3 Multiple \u2014 Print layout",
+      "image_sha256": "e9153c42636608e02091f09eabdba4b853f25c58fb8d3e65c42e6a2ad8b3eb87"
+    },
+    {
+      "id": "oobb_part_electronic_wire_basic_plate_3_width_3_height_12_7_depth_triple_pin_header_4_multiple",
+      "variant": "3dpr",
+      "source": "parts/oobb_part_electronic_wire_basic_plate_3_width_3_height_12_7_depth_triple_pin_header_4_multiple/3dpr.stl",
+      "source_sha256": "81e071843aa974aacce4280b7ffae6a94105b0c683f95d69906f4862da645c9e",
+      "image": "parts/oobb_part_electronic_wire_basic_plate_3_width_3_height_12_7_depth_triple_pin_header_4_multiple/3dpr_presentation.png",
+      "dimensions_mm": [
+        94.0,
+        43.98,
+        12.7
+      ],
+      "key": "0a3cef145b35f05394f2783a",
+      "sheet_version": 1,
+      "renderer_sha256": "381b23f18ce1a9e05327b876214573ca7046fd871c07fbb493305a9cf8143001",
+      "blender": "Blender 5.2.2 LTS",
+      "label": "Electronic Wire Basic Plate 3 Width 3 Height 12 7 Depth Triple Pin Header 4 Multiple \u2014 Print layout",
+      "image_sha256": "3e7179c75e19d5d545c57405b56db19ec30f4800347bfef4a99d2bf8a9e9b02e"
+    },
+    {
+      "id": "oobb_part_electronic_wire_basic_plate_3_width_3_height_15_24_depth_triple_pin_header_5_multiple",
+      "variant": "3dpr",
+      "source": "parts/oobb_part_electronic_wire_basic_plate_3_width_3_height_15_24_depth_triple_pin_header_5_multiple/3dpr.stl",
+      "source_sha256": "4f18c14b69487343c2ed69a7139529d6ac913cdc32f2bd0fcd1d9084577c1c53",
+      "image": "parts/oobb_part_electronic_wire_basic_plate_3_width_3_height_15_24_depth_triple_pin_header_5_multiple/3dpr_presentation.png",
+      "dimensions_mm": [
+        94.0,
+        43.98,
+        15.24
+      ],
+      "key": "0f1982250d9de4af2c6b4bb8",
+      "sheet_version": 1,
+      "renderer_sha256": "381b23f18ce1a9e05327b876214573ca7046fd871c07fbb493305a9cf8143001",
+      "blender": "Blender 5.2.2 LTS",
+      "label": "Electronic Wire Basic Plate 3 Width 3 Height 15 24 Depth Triple Pin Header 5 Multiple \u2014 Print layout",
+      "image_sha256": "01e4c8407a693600967d1ec50028c85d666b310730b1a92862e1aac73d5a0465"
+    },
+    {
+      "id": "oobb_part_electronic_wire_basic_plate_3_width_3_height_17_78_depth_triple_pin_header_6_multiple",
+      "variant": "3dpr",
+      "source": "parts/oobb_part_electronic_wire_basic_plate_3_width_3_height_17_78_depth_triple_pin_header_6_multiple/3dpr.stl",
+      "source_sha256": "905dee3ef796f5da4a47f09ab06eb50b93c677c5480455e43f3cddce5a3a13e4",
+      "image": "parts/oobb_part_electronic_wire_basic_plate_3_width_3_height_17_78_depth_triple_pin_header_6_multiple/3dpr_presentation.png",
+      "dimensions_mm": [
+        94.0,
+        43.98,
+        17.78
+      ],
+      "key": "f2493949542a6a64d602a57e",
+      "sheet_version": 1,
+      "renderer_sha256": "381b23f18ce1a9e05327b876214573ca7046fd871c07fbb493305a9cf8143001",
+      "blender": "Blender 5.2.2 LTS",
+      "label": "Electronic Wire Basic Plate 3 Width 3 Height 17 78 Depth Triple Pin Header 6 Multiple \u2014 Print layout",
+      "image_sha256": "b7c58c283782a08e81ae6006de5ebcff02416a1d1c5da353bdb91bf71ab50836"
+    },
+    {
+      "id": "oobb_part_electronic_wire_basic_plate_3_width_3_height_20_32_depth_triple_pin_header_7_multiple",
+      "variant": "3dpr",
+      "source": "parts/oobb_part_electronic_wire_basic_plate_3_width_3_height_20_32_depth_triple_pin_header_7_multiple/3dpr.stl",
+      "source_sha256": "2907268b448312a76ff58691decf838ca1d4f36a1e0f6b3d7a203474bd621838",
+      "image": "parts/oobb_part_electronic_wire_basic_plate_3_width_3_height_20_32_depth_triple_pin_header_7_multiple/3dpr_presentation.png",
+      "dimensions_mm": [
+        94.0,
+        43.98,
+        20.32
+      ],
+      "key": "0ea0930aea972b825a6e2bec",
+      "sheet_version": 1,
+      "renderer_sha256": "381b23f18ce1a9e05327b876214573ca7046fd871c07fbb493305a9cf8143001",
+      "blender": "Blender 5.2.2 LTS",
+      "label": "Electronic Wire Basic Plate 3 Width 3 Height 20 32 Depth Triple Pin Header 7 Multiple \u2014 Print layout",
+      "image_sha256": "087a6b757e849e1f06a8cccb095dd8ed81925c0cc893a2968278d6a1a6c8f485"
+    },
+    {
+      "id": "oobb_part_electronic_wire_basic_plate_3_width_3_height_22_86_depth_triple_pin_header_8_multiple",
+      "variant": "3dpr",
+      "source": "parts/oobb_part_electronic_wire_basic_plate_3_width_3_height_22_86_depth_triple_pin_header_8_multiple/3dpr.stl",
+      "source_sha256": "26967ed6c0335dc03a9d2312aa993da5546c90a7c1a21933bdbaaec76ca732f2",
+      "image": "parts/oobb_part_electronic_wire_basic_plate_3_width_3_height_22_86_depth_triple_pin_header_8_multiple/3dpr_presentation.png",
+      "dimensions_mm": [
+        94.0,
+        43.98,
+        22.86
+      ],
+      "key": "0f8cef2da477b17f7d46ea09",
+      "sheet_version": 1,
+      "renderer_sha256": "381b23f18ce1a9e05327b876214573ca7046fd871c07fbb493305a9cf8143001",
+      "blender": "Blender 5.2.2 LTS",
+      "label": "Electronic Wire Basic Plate 3 Width 3 Height 22 86 Depth Triple Pin Header 8 Multiple \u2014 Print layout",
+      "image_sha256": "a2bb1ba9d06776a920298638992512003dfdaf0cddd3972e7c97ef9b5ed2fb51"
+    },
+    {
+      "id": "oobb_part_electronic_wire_basic_plate_3_width_3_height_25_4_depth_triple_pin_header_9_multiple",
+      "variant": "3dpr",
+      "source": "parts/oobb_part_electronic_wire_basic_plate_3_width_3_height_25_4_depth_triple_pin_header_9_multiple/3dpr.stl",
+      "source_sha256": "168be4af8736701af4865ea56f39f16e9d11bcda9d6a7e353d7c88ee23938ac3",
+      "image": "parts/oobb_part_electronic_wire_basic_plate_3_width_3_height_25_4_depth_triple_pin_header_9_multiple/3dpr_presentation.png",
+      "dimensions_mm": [
+        94.0,
+        43.98,
+        25.4
+      ],
+      "key": "63ae0d7a4cf221fa3da42bb9",
+      "sheet_version": 1,
+      "renderer_sha256": "381b23f18ce1a9e05327b876214573ca7046fd871c07fbb493305a9cf8143001",
+      "blender": "Blender 5.2.2 LTS",
+      "label": "Electronic Wire Basic Plate 3 Width 3 Height 25 4 Depth Triple Pin Header 9 Multiple \u2014 Print layout",
+      "image_sha256": "3395c2e2c9d001faf2ede9d26594e90344cd820fdbd1c2ef891407278f20e7f2"
+    },
+    {
+      "id": "oobb_part_electronic_wire_basic_plate_3_width_3_height_27_94_depth_triple_pin_header_10_multiple",
+      "variant": "3dpr",
+      "source": "parts/oobb_part_electronic_wire_basic_plate_3_width_3_height_27_94_depth_triple_pin_header_10_multiple/3dpr.stl",
+      "source_sha256": "0fedc303ea719cd8d43aa9bc96ca33fc26d6b82baad013360bd90a46e0072461",
+      "image": "parts/oobb_part_electronic_wire_basic_plate_3_width_3_height_27_94_depth_triple_pin_header_10_multiple/3dpr_presentation.png",
+      "dimensions_mm": [
+        94.0,
+        43.98,
+        27.94
+      ],
+      "key": "bdfd5e6272268a92e914621a",
+      "sheet_version": 1,
+      "renderer_sha256": "381b23f18ce1a9e05327b876214573ca7046fd871c07fbb493305a9cf8143001",
+      "blender": "Blender 5.2.2 LTS",
+      "label": "Electronic Wire Basic Plate 3 Width 3 Height 27 94 Depth Triple Pin Header 10 Multiple \u2014 Print layout",
+      "image_sha256": "f961be0cb339ded9881e75fef00d9f72fe964541427ebb717d1f6b2032e9f285"
+    },
+    {
+      "id": "oobb_part_electronic_wire_basic_plate_3_width_3_height_4_depth",
+      "variant": "3dpr",
+      "source": "parts/oobb_part_electronic_wire_basic_plate_3_width_3_height_4_depth/3dpr.stl",
+      "source_sha256": "68ae38ac84646ffe6d4d947c13264ff436125b533af9a3fb6ef7cf3886954382",
+      "image": "parts/oobb_part_electronic_wire_basic_plate_3_width_3_height_4_depth/3dpr_presentation.png",
+      "dimensions_mm": [
+        44.0,
+        43.98,
+        4.0
+      ],
+      "key": "c768211930f6ee4fa1a45fd1",
+      "sheet_version": 1,
+      "renderer_sha256": "381b23f18ce1a9e05327b876214573ca7046fd871c07fbb493305a9cf8143001",
+      "blender": "Blender 5.2.2 LTS",
+      "label": "Electronic Wire Basic Plate 3 Width 3 Height 4 Depth \u2014 Print layout",
+      "image_sha256": "3293ff323a656a404ba697188329d32fd2e29c40a972907ba16b895040fa84d8"
+    },
+    {
+      "id": "oobb_part_electronic_wire_basic_plate_3_width_3_height_7_62_depth_triple_pin_header_2_multiple",
+      "variant": "3dpr",
+      "source": "parts/oobb_part_electronic_wire_basic_plate_3_width_3_height_7_62_depth_triple_pin_header_2_multiple/3dpr.stl",
+      "source_sha256": "06c04f770d1d346e4dba27a65813bb9e493cea7df16108b94eb4596634875bf2",
+      "image": "parts/oobb_part_electronic_wire_basic_plate_3_width_3_height_7_62_depth_triple_pin_header_2_multiple/3dpr_presentation.png",
+      "dimensions_mm": [
+        94.0,
+        43.98,
+        7.62
+      ],
+      "key": "6554be5e6b5acfea4ae5e7ee",
+      "sheet_version": 1,
+      "renderer_sha256": "381b23f18ce1a9e05327b876214573ca7046fd871c07fbb493305a9cf8143001",
+      "blender": "Blender 5.2.2 LTS",
+      "label": "Electronic Wire Basic Plate 3 Width 3 Height 7 62 Depth Triple Pin Header 2 Multiple \u2014 Print layout",
+      "image_sha256": "f0ee5e642b6c007c2b82bd6d75beab5ed199176c19b33fd24c4e45459fffbd41"
+    },
+    {
+      "id": "oobb_part_electronic_wire_i2c_plate_3_width_3_height_4_depth",
+      "variant": "3dpr",
+      "source": "parts/oobb_part_electronic_wire_i2c_plate_3_width_3_height_4_depth/3dpr.stl",
+      "source_sha256": "3ce1b48b2287d291a979038c3e7341b9b8cd1f0510f1ea31a6f0b12915f4a913",
+      "image": "parts/oobb_part_electronic_wire_i2c_plate_3_width_3_height_4_depth/3dpr_presentation.png",
+      "dimensions_mm": [
+        44.0,
+        43.98,
+        4.0
+      ],
+      "key": "ad62fe1ff8daf5fd173e95f3",
+      "sheet_version": 1,
+      "renderer_sha256": "381b23f18ce1a9e05327b876214573ca7046fd871c07fbb493305a9cf8143001",
+      "blender": "Blender 5.2.2 LTS",
+      "label": "Electronic Wire I2C Plate 3 Width 3 Height 4 Depth \u2014 Print layout",
+      "image_sha256": "a330c981ddded02caca7ed07e760992aeb08fa0e43f5987905a2794bbd8b8bbd"
+    },
+    {
+      "id": "oobb_part_electronic_wire_motor_plate_3_width_3_height_4_depth",
+      "variant": "3dpr",
+      "source": "parts/oobb_part_electronic_wire_motor_plate_3_width_3_height_4_depth/3dpr.stl",
+      "source_sha256": "861998fcd6ac62054c56a00bd9201a8f1678d01a82dc85c197350c70d4dbadaa",
+      "image": "parts/oobb_part_electronic_wire_motor_plate_3_width_3_height_4_depth/3dpr_presentation.png",
+      "dimensions_mm": [
+        44.0,
+        43.98,
+        4.0
+      ],
+      "key": "06f294aab6ac36163b733c04",
+      "sheet_version": 1,
+      "renderer_sha256": "381b23f18ce1a9e05327b876214573ca7046fd871c07fbb493305a9cf8143001",
+      "blender": "Blender 5.2.2 LTS",
+      "label": "Electronic Wire Motor Plate 3 Width 3 Height 4 Depth \u2014 Print layout",
+      "image_sha256": "32c52bede779bafbd1a99e8b61904df0f3ee7090dddfe58826f5a40f205d3b10"
+    },
+    {
+      "id": "oobb_part_electronic_wire_motor_stepper_plate_3_width_3_height_4_depth",
+      "variant": "3dpr",
+      "source": "parts/oobb_part_electronic_wire_motor_stepper_plate_3_width_3_height_4_depth/3dpr.stl",
+      "source_sha256": "4231c525495b666452b02058d2ed3b9e2af12ea4bfe3c8cd76cc4a57af6a642e",
+      "image": "parts/oobb_part_electronic_wire_motor_stepper_plate_3_width_3_height_4_depth/3dpr_presentation.png",
+      "dimensions_mm": [
+        44.0,
+        43.98,
+        4.0
+      ],
+      "key": "2c9c4c54de3ca98aba459ef9",
+      "sheet_version": 1,
+      "renderer_sha256": "381b23f18ce1a9e05327b876214573ca7046fd871c07fbb493305a9cf8143001",
+      "blender": "Blender 5.2.2 LTS",
+      "label": "Electronic Wire Motor Stepper Plate 3 Width 3 Height 4 Depth \u2014 Print layout",
+      "image_sha256": "3f6ad7b6be03660802d2b8c6c5f24085eeda46dcbca599ccd5c4898412fa05c5"
+    },
+    {
+      "id": "oobb_part_electronic_wire_power_barrel_jack_2_1_mm_plate_3_width_3_height_12_depth",
+      "variant": "3dpr",
+      "source": "parts/oobb_part_electronic_wire_power_barrel_jack_2_1_mm_plate_3_width_3_height_12_depth/3dpr.stl",
+      "source_sha256": "db8dbf243b0427a8d72079a300218859f7a1613d77bbb9b388e7a37e60ce4e44",
+      "image": "parts/oobb_part_electronic_wire_power_barrel_jack_2_1_mm_plate_3_width_3_height_12_depth/3dpr_presentation.png",
+      "dimensions_mm": [
+        94.0,
+        43.98,
+        6.0
+      ],
+      "key": "ce04dbc14ec09bc21777a073",
+      "sheet_version": 1,
+      "renderer_sha256": "381b23f18ce1a9e05327b876214573ca7046fd871c07fbb493305a9cf8143001",
+      "blender": "Blender 5.2.2 LTS",
+      "label": "Electronic Wire Power Barrel Jack 2 1 Mm Plate 3 Width 3 Height 9 Depth \u2014 Print layout",
+      "image_sha256": "10bd427163aff196f020ba7bde0932e7e7557b403f351df1f421fa5b4b3133c0"
+    },
+    {
+      "id": "oobb_part_electronic_wire_power_barrel_jack_2_1_mm_plate_3_width_3_height_12_depth_bottom_solid",
+      "variant": "3dpr",
+      "source": "parts/oobb_part_electronic_wire_power_barrel_jack_2_1_mm_plate_3_width_3_height_12_depth_bottom_solid/3dpr.stl",
+      "source_sha256": "df7a195bdc5752e26c3d284ae97391d3dbf62e250855b03bdc8e29b85be0997c",
+      "image": "parts/oobb_part_electronic_wire_power_barrel_jack_2_1_mm_plate_3_width_3_height_12_depth_bottom_solid/3dpr_presentation.png",
+      "dimensions_mm": [
+        94.0,
+        43.98,
+        6.0
+      ],
+      "key": "5a7f077d03a275953724ef23",
+      "sheet_version": 1,
+      "renderer_sha256": "381b23f18ce1a9e05327b876214573ca7046fd871c07fbb493305a9cf8143001",
+      "blender": "Blender 5.2.2 LTS",
+      "label": "Electronic Wire Power Barrel Jack 2 1 Mm Plate 3 Width 3 Height 9 Depth Bottom Solid \u2014 Print layout",
+      "image_sha256": "a223652ece6e433d82c530244fe4c6f5cf50eb2e80f496084e9e4e427789603a"
+    },
+    {
+      "id": "oobb_part_electronic_wire_power_plate_3_width_3_height_4_depth",
+      "variant": "3dpr",
+      "source": "parts/oobb_part_electronic_wire_power_plate_3_width_3_height_4_depth/3dpr.stl",
+      "source_sha256": "ed0117f2e7af6342f1572bd65a196c25457a571ca5f28719adb70d45623e81ca",
+      "image": "parts/oobb_part_electronic_wire_power_plate_3_width_3_height_4_depth/3dpr_presentation.png",
+      "dimensions_mm": [
+        44.0,
+        43.98,
+        4.0
+      ],
+      "key": "66b3542321c5a270d3de3ac1",
+      "sheet_version": 1,
+      "renderer_sha256": "381b23f18ce1a9e05327b876214573ca7046fd871c07fbb493305a9cf8143001",
+      "blender": "Blender 5.2.2 LTS",
+      "label": "Electronic Wire Power Plate 3 Width 3 Height 4 Depth \u2014 Print layout",
+      "image_sha256": "2dfdf0fe48ed64ae5df646aec7d0293cec185a4786c278257b69847b3147c7d6"
+    }
+  ]
+}

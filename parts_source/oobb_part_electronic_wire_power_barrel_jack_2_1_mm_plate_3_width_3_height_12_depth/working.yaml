@@ -1,0 +1,28 @@
+depth: 12
+height: 3
+oobb_details:
+  depth: 12
+  height: 3
+  oobb_name: wire_barrel_jack
+  width: 3
+  wire_style: ''
+  wire_type: power
+part_category: wire
+part_style: ''
+part_type: power
+taxonomy_1: oobb
+taxonomy_10: 12_depth
+taxonomy_11: ''
+taxonomy_12: ''
+taxonomy_13: ''
+taxonomy_14: ''
+taxonomy_15: ''
+taxonomy_2: part
+taxonomy_3: electronic
+taxonomy_4: wire
+taxonomy_5: power
+taxonomy_6: barrel_jack_2_1_mm
+taxonomy_7: plate
+taxonomy_8: 3_width
+taxonomy_9: 3_height
+width: 3
