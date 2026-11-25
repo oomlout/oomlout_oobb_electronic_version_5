@@ -19,11 +19,18 @@ class CatalogueTests(unittest.TestCase):
             part=self.root/'parts'/name;part.mkdir(parents=True)
             (part/'working.yaml').write_text(yaml.safe_dump(dict(id=name,taxonomy_1='oobb',taxonomy_2='part',taxonomy_3=f'{width}_width',oobb_details=dict(width=width))))
     def tearDown(self):self.temporary.cleanup()
-    def test_navigation_is_text_and_links_to_folders(self):
+    def test_navigation_copies_printable_stl_and_links_to_folders(self):
+        source = self.root/'parts/sample_2/3dpr.stl'
+        source.write_bytes(b'production\x00mesh')
         catalogue.navigation(self.root)
         nav=self.root/'navigation_oobb'
         self.assertEqual(len(list(nav.rglob('oomp_id.txt'))),2)
-        self.assertEqual({p.name for p in nav.rglob('*') if p.is_file()},{'README.md','oomp_id.txt'})
+        self.assertEqual({p.name for p in nav.rglob('*') if p.is_file()},{'README.md','oomp_id.txt','3dpr.stl'})
+        mesh, = nav.rglob('3dpr.stl')
+        self.assertEqual(mesh.read_bytes(), source.read_bytes())
+        source.write_bytes(b'revised mesh')
+        catalogue.navigation(self.root)
+        self.assertEqual(mesh.read_bytes(), source.read_bytes())
         discovery=(nav/'oobb/part/README.md').read_text()
         self.assertLess(discovery.index('2_width'),discovery.index('10_width'))
         self.assertIn('parts/sample_2/',discovery)

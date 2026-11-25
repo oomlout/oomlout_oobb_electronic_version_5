@@ -21,9 +21,10 @@ import yaml
 ROOT = Path(__file__).resolve().parent
 START = '<!-- oobb-presentation:start -->'
 END = '<!-- oobb-presentation:end -->'
-NOTICE = 'AI-generated images and instructions. Errors possible.'
-ORIGIN = ('This is an entirely AI-generated coding project. The generated outputs are included and usually work, '
-          'but the main purpose of publishing it is to give others a starting point for modifying the project with their own AI tools.')
+NOTICE = 'AI-generated CAD images and instructions. Errors possible.'
+ORIGIN = ('This is an entirely AI-generated coding project. The source code is largely unreadable by humans, '
+          'but usable generated files are included. It is published so others can use their own AI tools to '
+          'understand, modify and regenerate the design.')
 
 def config(root=ROOT):
     return json.loads((root / 'catalogue.json').read_text(encoding='utf-8'))
@@ -69,16 +70,87 @@ def generated(path, body):
         return old[:old.index(START)] + block.rstrip('\n') + old[old.index(END)+len(END):]
     return block + ('\n' + old if old else '')
 
+def assembly_record(source):
+    path = source / 'assembly.json'
+    return json.loads(path.read_text(encoding='utf-8')) if path.exists() else {}
+
+def hardware_table(assembly):
+    lines = ['Hardware for one connector. Stock and prepared headers are the same items before and after modification.', '',
+             '| Hardware | Quantity | State |', '| --- | ---: | --- |']
+    for item in assembly['hardware']:
+        lines.append(f"| [{item['name']}]({item['url']}) | {item['quantity']} | {item.get('state', 'starting hardware')} |")
+    lines += [f"| Wires, sized for the crimp contacts | {assembly['wire_count']} | Cut to suit |", '']
+    reference = assembly.get('header_reference')
+    if reference:
+        lines += [f"Header stock: [HOAUC {reference['mpn']} / LCSC {reference['lcsc']}]({reference['product_url']}) — a 40-position strip to cut to length. [Manufacturer drawing]({reference['datasheet_url']}).", '']
+    return lines
+
+def assembly_steps(assembly, source, destination):
+    lines = []
+    for number, step in enumerate(assembly['steps'], 1):
+        view = assembly['step_views'][number-1]
+        image = source / assembly['images'][view]
+        thumb = image.with_name(image.stem + '_thumb.png')
+        lines += [f'{number}. {step}', '',
+                  f'[![AI-generated assembly stage {number}]({relative(thumb, destination)})]({relative(image, destination)})', '']
+    lines += [assembly['note'], '']
+    return lines
+
+def connector_name(detail):
+    if detail.get('wire_style') == 'triple_pin_header':
+        return f"Triple header · {detail['multiple']} rows"
+    return {'i2c': 'I²C', 'motor_stepper': 'Stepper motor'}.get(detail['wire_type'], detail['wire_type'].capitalize()) + ' wire holder'
+
+def guide_links(source, cfg):
+    directory = f"{cfg['pages_url']}/parts/{source.name}/assembly"
+    return f'[Browser guide]({directory}/assembly_instructions.html)', f'[PDF]({directory}/assembly_instructions.pdf)'
+
+def part_title(part):
+    detail = part.get('oobb_details') or {}
+    kind = detail.get('oobb_name')
+    if kind == 'wire':
+        return connector_name(detail)
+    if kind == 'spacer':
+        name = detail['spacer_type'].capitalize() + ' spacer'
+        style = detail.get('spacer_style', '')
+    elif kind == 'wire_barrel_jack':
+        name = '2.1 mm barrel-jack plate'
+        style = detail.get('wire_style', '')
+    else:
+        return part.get('name_proper') or part['id'].replace('_', ' ').title()
+    suffix = ' · ' + style.replace('_', ' ') if style else ''
+    return f"{name} · {detail['width']} × {detail['height']} OOBB · {detail['depth']:g} mm{suffix}"
+
 def page(part, source, destination, cfg):
     root = source.parent.parent
     detail = part.get('oobb_details') or {}
     purchased = not detail
-    title = part.get('name_proper') or part['id'].replace('_', ' ').title()
-    lines = [f'# {safe_text(title)}', '', NOTICE, '', '## Summary', '',
-             ('Purchased hardware referenced by this project.' if purchased else cfg['summary']), '', ORIGIN, '']
-    preview = source / '3dpr_presentation.png'
+    assembly = assembly_record(source)
+    title = part_title(part)
+    summary = assembly.get('description') or cfg['summary']
+    parts_note, fitting = cfg['parts'], cfg['assembly']
+    if detail.get('oobb_name') == 'wire_barrel_jack':
+        half = detail['depth'] / 2
+        summary = f"A two-piece mount for a 2.1 mm barrel jack. The two {half:g} mm halves print side by side and stack to {detail['depth']:g} mm."
+        parts_note = 'One print contains the lower and upper halves. Supply the barrel jack separately.'
+        fitting = 'Align the two half-round channels around the jack and line up the mounting holes. Check the fit against your jack before fastening the stack.'
+    elif detail.get('oobb_name') == 'spacer':
+        summary = f"A {detail['depth']:g} mm spacer for stacking OOBB electronic plates on a {detail['width']} × {detail['height']} footprint."
+        parts_note = 'One printable spacer plate.'
+        fitting = 'Align the mounting holes with the adjoining plates. Check the opening and fastener clearance against the electronics before fastening.'
+    lines = [f'# {safe_text(title)}', '',
+             ('Purchased hardware referenced by this project.' if purchased else summary), '',
+             NOTICE, '', ORIGIN, '']
+    example = cfg.get('example_images', {}) if part['id'] == cfg.get('example_id') else {}
+    if assembly:
+        example = assembly['images']
+    preview = source / example.get('assembled', '3dpr_presentation.png')
+    if not preview.is_file():
+        preview = source / '3dpr_presentation.png'
     if preview.exists():
-        lines += [f'![CAD preview]({relative(preview, destination)})', '']
+        lines += [f'[![CAD preview]({relative(preview, destination)})]({relative(source / "README.md", destination)})', '']
+    if (source / '3dpr.stl').exists():
+        lines += [f'[Printable STL]({relative(source / "3dpr.stl", destination)})', '']
     lines += ['## Details', '', f"**Full OOMP ID:** `{part['id']}`", '',
               f'[Part folder]({relative(source, destination)}/) · [OOBB navigation]({relative(root / "navigation_oobb", destination)}/)', '',
               '| Field | Value |', '| --- | --- |']
@@ -90,8 +162,15 @@ def page(part, source, destination, cfg):
     metadata = yaml.safe_dump(part, sort_keys=False, allow_unicode=True).rstrip()
     fence = '`' * max(3, max((len(m[0])+1 for m in re.finditer(r'`+', metadata)), default=3))
     lines += ['', '<details>', '<summary>Full part details: all working.yaml fields</summary>', '', fence+'yaml', metadata, fence, '', '</details>', '',
-              '## Parts', '', ('Purchased hardware; no printable mesh is generated for this record.' if purchased else cfg['parts']), '',
-              '## Assembly', '', ('Use the hardware specification above when sourcing this item.' if purchased else cfg['assembly']), '']
+              '## Parts', '', ('Purchased hardware; no printable mesh is generated for this record.' if purchased else parts_note), '',
+              '## Assembly', '', ('Use the hardware specification above when sourcing this item.' if purchased else fitting), '']
+    if assembly:
+        split = lines.index('## Parts')
+        lines = lines[:split] + [f'![AI-generated bare print]({relative(source / assembly["images"]["plate"], destination)})', '',
+                                '## Parts', '', f'![AI-generated exploded connector]({relative(source / assembly["images"]["exploded"], destination)})', '',
+                                *hardware_table(assembly), '## Assembly', '', ' · '.join((*guide_links(source, cfg),
+                                f'[Download offline HTML](https://github.com/oomlout/oomlout_oobb_electronic_version_5/raw/refs/heads/main/parts/{source.name}/assembly/assembly_instructions.html)')), '',
+                                *assembly_steps(assembly, source, destination)]
     if (root/'PROJECT_GUIDE.md').exists():
         lines += [f'[Project guide and existing assembly notes]({relative(root / "PROJECT_GUIDE.md", destination)})', '']
     return '\n'.join(lines)
@@ -103,9 +182,9 @@ def navigation(root=ROOT):
     if nav.exists():
         for p in nav.rglob('*'):
             if p.is_symlink() or (hasattr(p,'is_junction') and p.is_junction()):raise ValueError(f'Linked navigation: {p}')
-            if p.is_file() and p.name not in ('README.md','oomp_id.txt'):
-                raise ValueError('Archive legacy navigation before adopting the text-only generator: '+str(p))
-    leaves={}; dirs={Path('.')}; pages={}
+            if p.is_file() and p.name not in ('README.md','oomp_id.txt','3dpr.stl'):
+                raise ValueError('Unknown navigation file: '+str(p))
+    leaves={}; dirs={Path('.')}; pages={}; meshes={}
     active=records(root)
     taxonomy_paths={part['id']:Path(*[segment(part[f'taxonomy_{i}']) for i in range(1,16) if part.get(f'taxonomy_{i}') not in (None,'','default')]) for _,part in active}
     prefix_ids={identity for identity,path in taxonomy_paths.items() if any(path != other and path in other.parents for other in taxonomy_paths.values())}
@@ -120,9 +199,14 @@ def navigation(root=ROOT):
         target=nav/leaf/'README.md'
         pages[target]=generated(target,page(part,source,target,cfg))
         pages[nav/leaf/'oomp_id.txt']=part['id']+'\n'
+        if part.get('oobb_details') and (source/'3dpr.stl').is_file():
+            meshes[nav/leaf/'3dpr.stl'] = source/'3dpr.stl'
         canonical=source/'README.md';pages[canonical]=generated(canonical,page(part,source,canonical,cfg))
     if any(a != b and a in b.parents for a in leaves for b in leaves):
         raise ValueError('A part taxonomy cannot also be a category')
+    for mesh in nav.rglob('3dpr.stl'):
+        if mesh not in meshes:
+            raise ValueError(f'Unrecognised navigation STL: {mesh}')
     def collapse(child):
         while child not in leaves:
             children=[p for p in dirs if p!=Path('.') and p.parent==child]
@@ -138,15 +222,40 @@ def navigation(root=ROOT):
             lines.append(f'- [{safe_text(child.name)}]({relative(collapse(child),dest)}/)')
         pages[dest]=generated(dest,'\n'.join(lines))
     dest=root/'README.md';discovery=collapse(Path('.'))
-    hero=[]
-    for source, part in sorted(leaves.values(),key=lambda item:item[1]['id'] != cfg.get('example_id')):
-        if (source/'3dpr_presentation.png').exists():
-            hero=[f'![Example CAD preview]({relative(source/"3dpr_presentation.png",dest)})', '',f'[Example part]({relative(source,dest)}/)', ''];break
-    lines=['# '+cfg['title'],'',NOTICE,'','## Summary','',cfg['summary'],'',ORIGIN,'',*hero,'## Details','',
+    hero = []
+    for source, part in sorted(active, key=lambda item: item[1]['id'] != cfg.get('example_id')):
+        assembly = assembly_record(source)
+        main_image = source / assembly.get('images', {}).get('assembled', '3dpr_presentation.png')
+        if main_image.is_file():
+            hero = [f'[![Example CAD render]({relative(main_image, dest)})]({relative(source / "README.md", dest)})', '']
+            break
+    guided = sorted(((source, part, assembly_record(source)) for source, part in active if (source/'assembly.json').exists()),
+                    key=lambda a: (a[1]['id'] != cfg.get('example_id'), a[1]['oobb_details'].get('multiple', 0), a[1]['id']))
+    lines=['# '+cfg['title'],'',cfg.get('overview', cfg['summary']),'',*cfg.get('credits', []),'',ORIGIN,'',NOTICE,'',*hero,'## Details','',
            f'This catalogue contains **{len(leaves)} records**. [Browse OOBB navigation]({relative(discovery,dest)}/).','',
-           'Each part has one canonical folder, its full OOMP ID and complete metadata. Navigation links open folders; use GitHub’s file pane to browse the available files.','',
-           '[Build and maintenance guide](CATALOGUE_BUILD.md)','',
-           '## Parts','',cfg['parts'],'','## Assembly','',cfg['assembly'],'']
+           '[Build and maintenance guide](CATALOGUE_BUILD.md)','', '## Parts','']
+    if guided:
+        lines += ['[Spacer plates](navigation_oobb/oobb/part/electronic/spacer/) · [Barrel-jack mounts](navigation_oobb/oobb/part/electronic/wire/power/barrel_jack_2_1_mm/)', '',
+                  '| Connector | Contacts | Part and hardware | Browser guide | Print guide |',
+                  '| --- | ---: | --- | --- | --- |']
+        for folder, part, assembly in guided:
+            name = connector_name(part['oobb_details'])
+            readme = relative(folder/'README.md', dest)
+            thumb = relative(folder/'basic_wire_assembled_thumb.png', dest)
+            viewer, pdf = guide_links(folder, cfg)
+            lines.append(f'| [<img src="{thumb}" width="144" alt="{name}">]({readme}) | {assembly["wire_count"]} | [{name}]({readme}) | {viewer} | {pdf} |')
+    else:
+        lines += [cfg['parts']]
+    lines += ['', '## Assembly', '']
+    if guided:
+        lines += ['Use 2.54 mm pitch long header stock with 6.25 mm of pin exposed on each side. The empty plastic cells locate the header in the printed plate. Choose the guide that matches your print. The illustrated fits have not been physically tested.', '']
+        for index, (folder, part, assembly) in enumerate(guided):
+            name = connector_name(part['oobb_details'])
+            lines += [f'<details{" open" if index == 0 else ""}><summary>{name}</summary>', '',
+                      f'[Parts and hardware]({relative(folder/"README.md", dest)}#parts)', '',
+                      *assembly_steps(assembly, folder, dest), '</details>', '']
+    else:
+        lines += [cfg['assembly'], '']
     if (root/'PROJECT_GUIDE.md').exists():lines+=['[Project guide and existing assembly notes](PROJECT_GUIDE.md)','']
     pages[dest]=generated(dest,'\n'.join(lines))
     # Compute and validate every page before replacing anything.
@@ -162,13 +271,18 @@ def navigation(root=ROOT):
                 time.sleep(0.1)
     if nav.exists():
         for p in nav.rglob('*'):
-            if p.is_file() and p not in pages:
+            if p.is_file() and p not in pages and p not in meshes:
                 old=p.read_text(encoding='utf-8')
                 if p.name=='README.md' and (START not in old or old.split(START)[0].strip() or old.split(END)[-1].strip()):
                     raise ValueError(f'Preserve manual notes before retiring navigation: {p}')
                 p.unlink()
         for p in sorted((x for x in nav.rglob('*') if x.is_dir()),key=lambda x:len(x.parts),reverse=True):
             if not any(p.iterdir()):p.rmdir()
+    for target, original in meshes.items():
+        if not target.exists() or sha(target) != sha(original):
+            temporary = target.with_suffix('.stl.tmp')
+            shutil.copyfile(original, temporary)
+            os.replace(temporary, target)
     return {'records':len(leaves),'navigation_files':sum(p.is_file() for p in nav.rglob('*'))}
 
 def sources(root=ROOT, part_filter=''):
@@ -243,17 +357,33 @@ def build(part_filter='', workers=2, native=False, legacy_actions=False, populat
     if legacy_actions:
         import working_action
         working_action.main(filter=part_filter)
-    import render_parts
-    render_parts.main(part_filter=part_filter,workers=min(workers,2))
+    render_catalogue(part_filter, workers)
     navigation(root)
     return verify(root)
+
+def render_catalogue(part_filter, workers):
+    import render_parts
+    render_parts.main(part_filter=part_filter, workers=min(workers, 2))
+    if any(part_filter in part['id'] and (part.get('oobb_details') or {}).get('oobb_name') == 'wire'
+           for _, part in records()):
+        import render_wire_catalogue
+        render_wire_catalogue.main(part_filter=part_filter, include_headers=False)
 
 def verify(root=ROOT):
     root=Path(root).resolve();parts=records(root);expected={p['id'] for _,p in parts}
     txt=list((root/'navigation_oobb').rglob('oomp_id.txt'))
     if len(txt)!=len(expected) or {p.read_text().strip() for p in txt}!=expected:raise ValueError('Navigation coverage mismatch')
+    meshes = {}
+    for leaf in txt:
+        original = root/'parts'/leaf.read_text().strip()/'3dpr.stl'
+        if original.exists():
+            meshes[leaf.with_name('3dpr.stl')] = original
     for p in (root/'navigation_oobb').rglob('*'):
-        if p.is_file() and p.name not in ('README.md','oomp_id.txt'):raise ValueError('Navigation contains assets')
+        if p.is_file() and p.name not in ('README.md','oomp_id.txt') and p not in meshes:
+            raise ValueError(f'Unexpected navigation asset: {p}')
+    for target, original in meshes.items():
+        if not target.is_file() or sha(original) != sha(target):
+            raise ValueError(f'Navigation STL mismatch: {target}')
     manifest=json.loads((root/'presentation/catalogue.json').read_text())
     rendered={r['id'] for r in manifest['renders'] if r['variant']=='3dpr'}
     printable={p['id'] for _,p in parts if p.get('oobb_details')}
@@ -269,9 +399,10 @@ def verify(root=ROOT):
         content=p.read_text(encoding='utf-8')
         block=content.split(START,1)[-1].split(END,1)[0]
         # YAML metadata can contain arbitrary Markdown-like strings; it is not navigation.
-        block=re.sub(r'<details>.*?</details>','',block,flags=re.S)
-        for match in re.finditer(r'!?\[[^\]]*\]\(([^)]+)\)',block):
-            url=unquote(match[1]).split('#',1)[0]
+        block=re.sub(r'^`{3,}yaml\n.*?^`{3,}$','',block,flags=re.S|re.M)
+        destinations = re.findall(r'\]\(([^)]+)\)', block) + re.findall(r'<img\s+src="([^"]+)"', block)
+        for destination in destinations:
+            url=unquote(destination).split('#',1)[0]
             if not url or '://' in url:continue
             target=(p.parent/url).resolve()
             if not target.is_relative_to(root) or not target.exists():raise ValueError(f'Broken link: {p}: {url}')
@@ -294,7 +425,8 @@ def cli():
     elif a.command=='docs':navigation()
     elif a.command=='verify':verify()
     else:
-        import render_parts
-        render_parts.main(part_filter=a.filter,workers=min(a.workers,2));navigation();verify()
+        render_catalogue(a.filter, a.workers)
+        navigation()
+        verify()
 
 if __name__=='__main__':cli()

@@ -1,0 +1,37 @@
+name: Publish assembly guides
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'parts/*/assembly/**'
+      - '.github/workflows/assembly-guides.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - name: Collect the published guides
+        run: |
+          mkdir site
+          cp --parents parts/*/assembly/assembly_instructions.{html,pdf} site/
+          echo '<!doctype html><html lang="en"><title>OOBB connector guides</title><h1>OOBB connector guides</h1><p><a href="https://github.com/oomlout/oomlout_oobb_electronic_version_5#parts">Choose your connector in the illustrated catalogue</a></p></html>' > site/index.html
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - uses: actions/deploy-pages@v4
+        id: deployment

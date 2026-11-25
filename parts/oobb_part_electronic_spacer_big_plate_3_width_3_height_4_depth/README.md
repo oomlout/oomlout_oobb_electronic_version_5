@@ -1,15 +1,15 @@
 <!-- oobb-presentation:start -->
-# Oobb Part Electronic Spacer Big Plate 3 Width 3 Height 4 Depth
+# Big spacer · 3 × 3 OOBB · 4 mm
 
-AI-generated images and instructions. Errors possible.
+A 4 mm spacer for stacking OOBB electronic plates on a 3 × 3 footprint.
 
-## Summary
+AI-generated CAD images and instructions. Errors possible.
 
-OOBB electronic spacers and mounting parts, organised by their actual component type and dimensions.
+This is an entirely AI-generated coding project. The source code is largely unreadable by humans, but usable generated files are included. It is published so others can use their own AI tools to understand, modify and regenerate the design.
 
-This is an entirely AI-generated coding project. The generated outputs are included and usually work, but the main purpose of publishing it is to give others a starting point for modifying the project with their own AI tools.
+[![CAD preview](3dpr_presentation.png)](README.md)
 
-![CAD preview](3dpr_presentation.png)
+[Printable STL](3dpr.stl)
 
 ## Details
 
@@ -316,9 +316,9 @@ width: 3
 
 ## Parts
 
-Select the spacer or mounting variant matching the required electronics layout. Electronic boards and mounting hardware are not supplied as printable parts.
+One printable spacer plate.
 
 ## Assembly
 
-Check the dimensions and mounting-hole arrangement against the actual board before printing and fitting the selected component.
+Align the mounting holes with the adjoining plates. Check the opening and fastener clearance against the electronics before fastening.
 <!-- oobb-presentation:end -->

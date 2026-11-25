@@ -1,9 +1,20 @@
 {
   "title": "OOBB electronic parts",
   "summary": "OOBB electronic spacers and mounting parts, organised by their actual component type and dimensions.",
+  "overview": "3D-print keyed wire holders, spacers and barrel-jack mounts for the OOBB grid. The catalogue includes printable STLs, dimensioned CAD views and illustrated wiring guides for five single-row connectors and triple headers with two to ten rows.",
+  "example_id": "oobb_part_electronic_wire_basic_plate_3_width_3_height_4_depth",
+  "example_images": {
+    "assembled": "basic_wire_assembled.png",
+    "bare": "basic_wire_plate.png",
+    "exploded": "basic_wire_exploded.png"
+  },
   "parts": "Select the spacer or mounting variant matching the required electronics layout. Electronic boards and mounting hardware are not supplied as printable parts.",
   "assembly": "Check the dimensions and mounting-hole arrangement against the actual board before printing and fitting the selected component.",
   "modes": [
     "3dpr"
+  ],
+  "pages_url": "https://oomlout.github.io/oomlout_oobb_electronic_version_5",
+  "credits": [
+    "Designed for the [OOBB version 5 building system](https://github.com/oomlout/oomlout_oobb_version_5) by [oomlout](https://github.com/oomlout)."
   ]
 }

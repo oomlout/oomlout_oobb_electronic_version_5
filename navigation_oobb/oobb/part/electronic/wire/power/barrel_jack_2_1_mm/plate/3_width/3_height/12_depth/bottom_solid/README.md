@@ -1,15 +1,15 @@
 <!-- oobb-presentation:start -->
-# Oobb Part Electronic Wire Power Barrel Jack 2 1 Mm Plate 3 Width 3 Height 9 Depth Bottom Solid
+# 2.1 mm barrel-jack plate · 3 × 3 OOBB · 12 mm · bottom solid
 
-AI-generated images and instructions. Errors possible.
+A two-piece mount for a 2.1 mm barrel jack. The two 6 mm halves print side by side and stack to 12 mm.
 
-## Summary
+AI-generated CAD images and instructions. Errors possible.
 
-OOBB electronic spacers and mounting parts, organised by their actual component type and dimensions.
+This is an entirely AI-generated coding project. The source code is largely unreadable by humans, but usable generated files are included. It is published so others can use their own AI tools to understand, modify and regenerate the design.
 
-This is an entirely AI-generated coding project. The generated outputs are included and usually work, but the main purpose of publishing it is to give others a starting point for modifying the project with their own AI tools.
+[![CAD preview](../../../../../../../../../../../../parts/oobb_part_electronic_wire_power_barrel_jack_2_1_mm_plate_3_width_3_height_12_depth_bottom_solid/3dpr_presentation.png)](../../../../../../../../../../../../parts/oobb_part_electronic_wire_power_barrel_jack_2_1_mm_plate_3_width_3_height_12_depth_bottom_solid/README.md)
 
-![CAD preview](../../../../../../../../../../../../parts/oobb_part_electronic_wire_power_barrel_jack_2_1_mm_plate_3_width_3_height_12_depth_bottom_solid/3dpr_presentation.png)
+[Printable STL](../../../../../../../../../../../../parts/oobb_part_electronic_wire_power_barrel_jack_2_1_mm_plate_3_width_3_height_12_depth_bottom_solid/3dpr.stl)
 
 ## Details
 
@@ -354,9 +354,9 @@ width: 3
 
 ## Parts
 
-Select the spacer or mounting variant matching the required electronics layout. Electronic boards and mounting hardware are not supplied as printable parts.
+One print contains the lower and upper halves. Supply the barrel jack separately.
 
 ## Assembly
 
-Check the dimensions and mounting-hole arrangement against the actual board before printing and fitting the selected component.
+Align the two half-round channels around the jack and line up the mounting holes. Check the fit against your jack before fastening the stack.
 <!-- oobb-presentation:end -->

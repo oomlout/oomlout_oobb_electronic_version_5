@@ -3,7 +3,7 @@
 The refresh retains all **28 active part records**, including the existing local
 source and geometry edits. Canonical files live under `parts/`. Root discovery
 links begin at the first branching category; final selections open part folders.
-Each navigation leaf contains only README.md and oomp_id.txt with the full OOMP ID.
+The initial refresh used text-only leaves. Printable leaves now also carry the canonical production STL.
 
 The previous navigation occupied **30,038,755 bytes**.
 The previous parts occupied **30,035,374 bytes**. The original Git

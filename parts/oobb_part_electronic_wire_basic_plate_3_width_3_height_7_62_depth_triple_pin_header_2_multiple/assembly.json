@@ -1,0 +1,68 @@
+{
+  "part_id": "oobb_part_electronic_wire_basic_plate_3_width_3_height_7_62_depth_triple_pin_header_2_multiple",
+  "description": "A 2-row, three-contact-wide connector using three vertical header_long strips with equal pin ends and an included top retainer. The base is 2.54 mm plus 2 \u00d7 2.54 mm; the top adds 2.54 mm when fitted.",
+  "hardware": [
+    {
+      "id": "electronic_connector_header_long_2_54_mm_pitch_through_hole_4_pin",
+      "name": "4-position header_long section (equal ends)",
+      "quantity": 3,
+      "url": "https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_long_2_54_mm_pitch_through_hole_4_pin"
+    },
+    {
+      "id": "electronic_connector_header_oobb_2_54_mm_pitch_vertical_2_row_4_position_2_contact",
+      "name": "Prepared vertical strip",
+      "quantity": 3,
+      "state": "after modification",
+      "url": "https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_oobb_2_54_mm_pitch_vertical_2_row_4_position_2_contact"
+    },
+    {
+      "id": "electronic_connector_header_2_54_mm_pitch_housing_3_pin_black_harwin_m20_1060300",
+      "name": "3-way socket housing",
+      "quantity": 2,
+      "url": "https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_housing_3_pin_black_harwin_m20_1060300"
+    },
+    {
+      "id": "electronic_connector_header_2_54_mm_pitch_crimp_1_pin_socket_22_to_30_awg_tin_harwin_m20_1180046",
+      "name": "Female crimp socket, 22\u201330 AWG",
+      "quantity": 6,
+      "url": "https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_crimp_1_pin_socket_22_to_30_awg_tin_harwin_m20_1180046"
+    }
+  ],
+  "steps": [
+    "Cut three 4-position sections of header_long (6.25 mm exposed at both ends). Push out pins 1, 4 from each strip; keep both end cells intact. Stand the strips vertically, counting from the bottom.",
+    "Pass 6 wires up through the rear opening before crimping. Crimp one socket per wire and insert the sockets into the backs of the housings until latched.",
+    "Place the three vertical strips into the bottom beam window, with one set of pin ends facing the keyed front opening. Mate one three-way housing with each active row.",
+    "Fit the included top retainer over the three empty top cells. It is printed beside the base in the same part file. Keep the rear wire opening clear."
+  ],
+  "step_views": [
+    "keyed",
+    "exploded",
+    "seating",
+    "assembled"
+  ],
+  "header_reference": {
+    "mpn": "1625-1140CNG0S150001",
+    "lcsc": "C343639",
+    "product_url": "https://www.lcsc.com/product-detail/C343639.html",
+    "datasheet_url": "https://atta.szlcsc.com/upload/public/pdf/source/20260917/9F655738B2D4F4FC500A9931BECCBD77.pdf"
+  },
+  "wire_count": 6,
+  "removed_pin_positions": [
+    1,
+    4
+  ],
+  "note": "The stock and prepared header rows describe the same item before and after modification. Use 15 mm overall header_long stock (6.25 mm exposed on each side of a 2.5 mm insulator); LCSC C343639 is a 40-position strip cut to the required lengths. Wire colours identify conductors, not a pinout. Housing and uncrimped socket geometry use nominal Harwin M20 references; wire bends are illustrative.",
+  "images": {
+    "plate": "basic_wire_plate.png",
+    "assembled": "basic_wire_assembled.png",
+    "exploded": "basic_wire_exploded.png",
+    "keyed": "basic_wire_keyed.png",
+    "seating": "basic_wire_seating.png"
+  },
+  "source_sha256": {
+    "production_stl": "06c04f770d1d346e4dba27a65813bb9e493cea7df16108b94eb4596634875bf2",
+    "header_step": "578ab16268dae9ed8197f4c1282ff28471d1ca3b0239905fde1889220aa2a00c",
+    "housing": "d5f7ef44351554ab2bb0f20256b81835bd15eed2f161d8d52da32bebbef6f286",
+    "contact": "903a5c07803441380de52f8451a08564700ac00fb25ed4cf385265efba3ce982"
+  }
+}

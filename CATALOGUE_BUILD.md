@@ -28,20 +28,18 @@ automation by default. Existing labels and specialised examples are preserved.
 `python catalogue.py render` refreshes previews and docs. `python catalogue.py docs`
 refreshes documentation alone; `python catalogue.py verify` checks coverage, artifact
 hashes, PNGs and generated local links. `python working_navigation.py` is compatible
-with older navigation callers and generates only text.
+with older navigation callers and also refreshes the printable STL at each taxonomy leaf.
 
 ## Documentation contract
 
-Root READMEs contain Summary, Details, Parts and Assembly, one example and a link
-to the first branching discovery category. They do not enumerate every part or
-file. Every part page includes the full OOMP ID, complete YAML details, a preview
-where printable geometry exists, and links to folders. Purchased hardware is labelled
-explicitly and gets no invented mesh. Existing project instructions are retained in
-`PROJECT_GUIDE.md` when present. Text outside generation markers is preserved.
+The project README leads with the assembled basic connector. Its catalogue links each
+wired variant to the canonical part README, browser guide and printable assembly book.
+Every wired part and the project Assembly section use the same four steps from
+`assembly.json`. Each part page retains its full OOMP ID and metadata. Manual text
+outside the generation markers is preserved.
 
-Navigation categories contain README files; terminal records contain README.md and
-oomp_id.txt only. Final selection links go directly to the canonical part folder.
-The generator refuses to silently remove legacy copied assets: archive those first.
+A printable taxonomy leaf contains `README.md`, `oomp_id.txt` and a byte-for-byte copy
+of the canonical `3dpr.stl`. Other assets stay in the part folder.
 
 ## Rendering and validation
 
@@ -51,6 +49,34 @@ invent details, alter holes or smooth away geometry. Raw views and logs stay und
 ignored `build/`; final 1600×1000 sheets and a SHA256 manifest are published.
 Cache identity includes geometry, renderer, Blender version, label and sheet code.
 Both ASCII and binary STL are accepted. Purchased hardware records are not rendered.
+
+## Connector assemblies
+
+Install the published [OOMP electronic catalogue](https://github.com/oomlout/oomp_electronic_version_5)
+as a sibling checkout or set `OOMP_ELECTRONIC_ROOT` to its location. The build reads
+the prepared long headers, housings and socket contacts directly from that checkout.
+Its STEP assets require the OpenCascade Python bindings in the requirements file.
+
+~~~powershell
+python catalogue.py render
+python validate_wire_catalogue.py
+~~~
+
+To refresh one connector, add `--filter <part-id-fragment>` to the catalogue render.
+To recompose assembly sheets and guides from existing Blender views, run
+`python render_wire_catalogue.py --reuse --no-headers` followed by `python catalogue.py docs`.
+The standalone renderer also supports updating the hardware catalogue with
+`python render_wire_catalogue.py` from a full writable OOMP checkout.
+
+Each wired variant has bare-print, prepared-header, exploded, seating and assembled
+views. The book renderer uses the same four assembly steps and CAD views as the
+README. It writes the A4 PDF and a standalone viewer under the canonical part's
+`assembly/` directory. The viewer starts on the four-step page and embeds the
+rendered PDF pages and their hardware links. GitHub Actions publishes the guides
+to Pages when their files change on main.
+
+The header dimensions, pin patterns and quantities are described in the
+[assembly notes](presentation/wire_catalogue_notes.md).
 
 ## Storage and Git history
 

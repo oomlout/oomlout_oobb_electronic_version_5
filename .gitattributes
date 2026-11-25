@@ -5,6 +5,7 @@
 /parts/** -text whitespace=cr-at-eol
 /navigation_oobb/** text eol=lf
 *.png -text
+*.pdf binary
 *.stl -text
 
 # Keep provenance hashes stable across fresh clones and platforms.

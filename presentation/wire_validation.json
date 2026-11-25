@@ -1,0 +1,17 @@
+{
+  "assemblies": 14,
+  "matched_pdf_and_html_guides": 14,
+  "header_long_lengths": 40,
+  "prepared_header_models": 14,
+  "vertical_arrangements": 9,
+  "full_resolution_images": 134,
+  "reference": "HOAUC 1625-1140CNG0S150001 / LCSC C343639",
+  "pin_ends_mm": [
+    6.25,
+    6.25
+  ],
+  "overall_pin_mm": 15,
+  "source_hashes": "matched",
+  "hardware_references": "matched",
+  "physical_fit_tested": false
+}

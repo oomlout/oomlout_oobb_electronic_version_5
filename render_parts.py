@@ -66,11 +66,12 @@ def sheet(cache, destination, label, size):
     import textwrap
     for i, line in enumerate(textwrap.wrap(label, width=95)):
         draw.text((48, 18 + 34*i), line, fill="#243a3b", font=font(28))
-    draw.text((48, 850), "Angled view", fill="#3b4b4b", font=font(26))
+    draw.text((48, 850), "Print layout · angled view", fill="#3b4b4b", font=font(26))
     draw.text((848, 850), "Top view", fill="#3b4b4b", font=font(26))
     extent = " × ".join(f"{v:g}" for v in size)
     draw.text((48, 904), f"Mesh envelope  {extent} mm", fill="#243a3b", font=font(26))
     draw.text((48, 955), "AI-generated CAD illustration. Errors possible.", fill="#616966", font=font(21))
+    draw.text((1552, 955), "Teal · printed PLA", anchor="ra", fill="#616966", font=font(21))
     temporary = destination.with_suffix(".tmp")
     canvas.save(temporary, format="PNG", optimize=True)
     os.replace(temporary, destination)
@@ -112,8 +113,7 @@ def main(part_filter="", force=False, blender=None, root=ROOT, workers=2):
     for folder, part, mode, source in catalogue.sources(root, part_filter):
         source_hash = sha(source)
         variant = "Print layout" if mode == "3dpr" else "Nominal / assembly"
-        label = part.get("name_proper", part["id"].replace("_", " ")) + " — " + variant
-        label = label.removeprefix("Oobb Part ").removeprefix("Oobb Tool ")
+        label = catalogue.part_title(part) + " — " + variant
         key = hashlib.sha256((source_hash + worker_hash + version + label + str(SHEET_VERSION) + sha(Path(__file__))).encode()).hexdigest()[:24]
         destination = folder / f"{mode}_presentation.png"
         record = dict(id=part["id"], variant=mode, source=source.relative_to(root).as_posix(),

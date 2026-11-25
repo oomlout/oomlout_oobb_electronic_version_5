@@ -1,4 +1,4 @@
-"""Generate text-only navigation and canonical part READMEs."""
+"""Generate taxonomy pages, printable leaf meshes and canonical part READMEs."""
 from pathlib import Path
 from catalogue import navigation
 def generate_navigation(folder="parts", sort=None):

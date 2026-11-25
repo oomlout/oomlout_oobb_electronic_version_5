@@ -1,15 +1,15 @@
 <!-- oobb-presentation:start -->
-# Oobb Part Electronic Wire I2C Plate 3 Width 3 Height 4 Depth
+# I²C wire holder
 
-AI-generated images and instructions. Errors possible.
+A printed i2c wire holder converts a 7-position header_long with equal pin ends into a 4-contact connector. Empty plastic cells locate the header in the plate.
 
-## Summary
+AI-generated CAD images and instructions. Errors possible.
 
-OOBB electronic spacers and mounting parts, organised by their actual component type and dimensions.
+This is an entirely AI-generated coding project. The source code is largely unreadable by humans, but usable generated files are included. It is published so others can use their own AI tools to understand, modify and regenerate the design.
 
-This is an entirely AI-generated coding project. The generated outputs are included and usually work, but the main purpose of publishing it is to give others a starting point for modifying the project with their own AI tools.
+[![CAD preview](basic_wire_assembled.png)](README.md)
 
-![CAD preview](3dpr_presentation.png)
+[Printable STL](3dpr.stl)
 
 ## Details
 
@@ -312,11 +312,43 @@ width: 3
 
 </details>
 
+![AI-generated bare print](basic_wire_plate.png)
+
 ## Parts
 
-Select the spacer or mounting variant matching the required electronics layout. Electronic boards and mounting hardware are not supplied as printable parts.
+![AI-generated exploded connector](basic_wire_exploded.png)
+
+Hardware for one connector. Stock and prepared headers are the same items before and after modification.
+
+| Hardware | Quantity | State |
+| --- | ---: | --- |
+| [7-position header_long section (equal ends)](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_long_2_54_mm_pitch_through_hole_7_pin) | 1 | starting hardware |
+| [Prepared OOBB header](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_oobb_2_54_mm_pitch_i2c_7_position_4_contact) | 1 | after modification |
+| [4-way socket housing](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_housing_4_pin_black_harwin_m20_1060400) | 1 | starting hardware |
+| [Female crimp socket, 22–30 AWG](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_crimp_1_pin_socket_22_to_30_awg_tin_harwin_m20_1180046) | 4 | starting hardware |
+| Wires, sized for the crimp contacts | 4 | Cut to suit |
+
+Header stock: [HOAUC 1625-1140CNG0S150001 / LCSC C343639](https://www.lcsc.com/product-detail/C343639.html) — a 40-position strip to cut to length. [Manufacturer drawing](https://atta.szlcsc.com/upload/public/pdf/source/20260917/9F655738B2D4F4FC500A9931BECCBD77.pdf).
 
 ## Assembly
 
-Check the dimensions and mounting-hole arrangement against the actual board before printing and fitting the selected component.
+[Browser guide](https://oomlout.github.io/oomlout_oobb_electronic_version_5/parts/oobb_part_electronic_wire_i2c_plate_3_width_3_height_4_depth/assembly/assembly_instructions.html) · [PDF](https://oomlout.github.io/oomlout_oobb_electronic_version_5/parts/oobb_part_electronic_wire_i2c_plate_3_width_3_height_4_depth/assembly/assembly_instructions.pdf) · [Download offline HTML](https://github.com/oomlout/oomlout_oobb_electronic_version_5/raw/refs/heads/main/parts/oobb_part_electronic_wire_i2c_plate_3_width_3_height_4_depth/assembly/assembly_instructions.html)
+
+1. Cut one 7-position section of header_long (6.25 mm exposed at both ends). Count from the key side (negative X in the model) and push out pins 1, 2, 7; keep the full plastic strip.
+
+[![AI-generated assembly stage 1](basic_wire_keyed_thumb.png)](basic_wire_keyed.png)
+
+2. Pass 4 wires up through the rear opening before crimping. Crimp one socket per wire and insert the sockets into the backs of the housings until latched.
+
+[![AI-generated assembly stage 2](basic_wire_exploded_thumb.png)](basic_wire_exploded.png)
+
+3. Mate the housing with the rear 6.25 mm pin ends, then lower the header and housing into their seats. The equal front ends face the front opening.
+
+[![AI-generated assembly stage 3](basic_wire_seating_thumb.png)](basic_wire_seating.png)
+
+4. Check that the wires move freely through the rear opening and the contacts remain recessed inside the front edge.
+
+[![AI-generated assembly stage 4](basic_wire_assembled_thumb.png)](basic_wire_assembled.png)
+
+The stock and prepared header rows describe the same item before and after modification. Use 15 mm overall header_long stock (6.25 mm exposed on each side of a 2.5 mm insulator); LCSC C343639 is a 40-position strip cut to the required lengths. Wire colours identify conductors, not a pinout. Housing and uncrimped socket geometry use nominal Harwin M20 references; wire bends are illustrative.
 <!-- oobb-presentation:end -->
