@@ -17,21 +17,25 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  publish:
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/configure-pages@v5
+      - uses: actions/checkout@v7
+      - uses: actions/configure-pages@v6
       - name: Collect the published guides
         run: |
           mkdir site
           cp --parents parts/*/assembly/assembly_instructions.{html,pdf} site/
           echo '<!doctype html><html lang="en"><title>OOBB connector guides</title><h1>OOBB connector guides</h1><p><a href="https://github.com/oomlout/oomlout_oobb_electronic_version_5#parts">Choose your connector in the illustrated catalogue</a></p></html>' > site/index.html
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: site
-      - uses: actions/deploy-pages@v4
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/deploy-pages@v5
         id: deployment
